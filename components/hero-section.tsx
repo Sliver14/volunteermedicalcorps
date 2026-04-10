@@ -57,14 +57,14 @@ export function HeroSection() {
       </div>
 
       {/* Bottom Right Envato Badge */}
-      <div className="absolute bottom-8 right-8 hidden md:block">
+      {/* <div className="absolute bottom-8 right-8 hidden md:block">
         <a 
           href="#" 
           className="inline-flex items-center gap-2 bg-black text-white text-xs font-medium px-5 py-2.5 rounded-full hover:bg-[#facc15] hover:text-black transition-colors"
         >
           🛒 Buy Alone on <span className="text-emerald-400 font-bold">envato</span>
         </a>
-      </div>
+      </div> */}
     </section>
   );
 }

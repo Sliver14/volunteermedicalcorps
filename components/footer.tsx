@@ -106,14 +106,6 @@ export function Footer() {
             <Link href="/cookies" className="hover:text-white transition-colors">Cookies</Link>
           </div>
 
-          <a 
-            href="https://themeforest.net/" 
-            target="_blank"
-            className="flex items-center gap-2 bg-white text-black px-6 py-2.5 rounded-full text-sm font-medium hover:bg-[#facc15] transition-colors"
-          >
-            Buy Alone on 
-            <span className="text-emerald-600 font-bold">envato</span>
-          </a>
         </div>
       </div>
     </footer>
