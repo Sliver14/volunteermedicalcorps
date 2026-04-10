@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Facebook, Twitter, Youtube, Instagram, Linkedin } from 'lucide-react';
 
 export function Footer() {
@@ -12,34 +13,13 @@ export function Footer() {
       <div className="relative mx-auto max-w-7xl px-6 py-16 lg:py-20">
         <div className="grid lg:grid-cols-12 gap-12">
           
-          {/* Quick Links */}
-          <div className="lg:col-span-3">
-            <h3 className="text-[#facc15] text-2xl font-bold mb-6">Quick Links</h3>
-            <ul className="space-y-4">
-              {[
-                { name: 'Give Now', href: '/donate' },
-                { name: 'Upcoming Events', href: '/events' },
-                { name: 'Volunteers', href: '/volunteers' },
-                { name: 'Become a Volunteer', href: '/become-volunteer' },
-                { name: 'Office Location', href: '/contact' },
-              ].map((link) => (
-                <li key={link.name}>
-                  <Link 
-                    href={link.href}
-                    className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors group"
-                  >
-                    <span className="text-[#facc15] group-hover:translate-x-1 transition-transform">›</span>
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Center Section - Mission + Social */}
+          {/* Logo and About Section */}
           <div className="lg:col-span-5 text-center lg:text-left">
+            <Link href="/" className="inline-block mb-8">
+              <Image src="/logo.png" alt="Logo" width={180} height={40} className="h-10 w-auto object-contain brightness-0 invert" />
+            </Link>
             <p className="text-lg leading-relaxed text-gray-300 mb-8 max-w-md mx-auto lg:mx-0">
-              We Are World Wide Organization is a global network committed to making a positive impact across communities, cultures, and countries.
+              The Volunteer Medical Corps is a global network of healthcare professionals committed to providing medical relief and support across communities, cultures, and countries.
             </p>
 
             <div>
@@ -64,6 +44,30 @@ export function Footer() {
             </div>
           </div>
 
+          {/* Quick Links */}
+          <div className="lg:col-span-3">
+            <h3 className="text-[#facc15] text-2xl font-bold mb-6">Quick Links</h3>
+            <ul className="space-y-4">
+              {[
+                { name: 'Give Now', href: '/donate' },
+                { name: 'Latest News', href: '/blog' },
+                { name: 'Our Campaigns', href: '/campaigns' },
+                { name: 'Become a Volunteer', href: '/register' },
+                { name: 'Global Prayer', href: '/globalprayer' },
+              ].map((link) => (
+                <li key={link.name}>
+                  <Link 
+                    href={link.href}
+                    className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors group"
+                  >
+                    <span className="text-[#facc15] group-hover:translate-x-1 transition-transform">›</span>
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           {/* Newsletter */}
           <div className="lg:col-span-4">
             <h3 className="text-[#facc15] text-2xl font-bold mb-6">Join The Newsletter</h3>
@@ -82,7 +86,7 @@ export function Footer() {
 
             <p className="text-emerald-400 text-sm mt-4 flex items-center gap-2 justify-center lg:justify-start">
               <span className="text-lg">✓</span> 
-              Your submission was successful.
+              Stay updated with our missions.
             </p>
           </div>
         </div>
@@ -93,17 +97,17 @@ export function Footer() {
         <div className="mx-auto max-w-7xl px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-6 text-sm">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 border border-white/30 rounded-full flex items-center justify-center">
-              ✕
+              ♥
             </div>
             <p className="text-gray-400">
-              © All right reserved 2026 Alone
+              © All right reserved 2026 Volunteer Medical Corps
             </p>
           </div>
 
           <div className="flex gap-6 text-gray-400">
             <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
-            <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
-            <Link href="/cookies" className="hover:text-white transition-colors">Cookies</Link>
+            <Link href="/about" className="hover:text-white transition-colors">About</Link>
+            <Link href="/resources" className="hover:text-white transition-colors">Resources</Link>
           </div>
 
         </div>

@@ -7,24 +7,11 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Alone - Global Charity Organization',
+  title: 'Volunteer Medical Corps - Healing the World',
   description: 'Join our movement to create lasting change in communities worldwide. Support education, healthcare, clean water, and more through our global charitable initiatives.',
   generator: 'v0.app',
   icons: {
-    icon: [
-      {
-        url: '/logo.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
+    icon: '/favicon.ico',
     apple: '/apple-icon.png',
   },
 }
