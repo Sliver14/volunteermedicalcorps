@@ -16,38 +16,48 @@ export function Header() {
       href: '#', 
       hasDropdown: true,
       dropdownItems: [
-        { name: 'Our Priorities', href: '/priorities' },
         { name: 'About Us', href: '/about' },
+        { name: 'Resources', href: '/resources' },
       ]
     },
     { 
       name: 'Campaigns', 
-      href: '#', 
-      hasDropdown: true,
-      dropdownItems: [
-        { name: 'Causes', href: '/causes' },
-        { name: 'Upcoming Events', href: '/events' },
-      ]
+      href: '/campaigns', 
+      hasDropdown: false,
     },
     { 
       name: 'Get Involved', 
       href: '#', 
       hasDropdown: true,
       dropdownItems: [
-        { name: 'Become A Volunteer', href: '/volunteer' },
+        { name: 'Become A Volunteer', href: '/register' },
         { name: 'Volunteers', href: '/volunteers' },
       ]
     },
     { 
-      name: 'Media', 
+      name: 'Academy', 
       href: '#', 
       hasDropdown: true,
       dropdownItems: [
-        { name: 'Blog Grid', href: '/blog' },
-        { name: 'Gallery Grid', href: '/gallery' },
+        { name: 'Overview', href: '/elearn' },
+        { name: 'Courses', href: '/elearn/courses' },
+        { name: 'Student Portal', href: '/elearn/students/home' },
       ]
     },
-    { name: 'Live stream', href: '/live', isSpecial: true },
+    { 
+      name: 'Media', 
+      href: '/blog',
+      hasDropdown: false,
+    },
+    { 
+      name: 'Connect', 
+      href: '#', 
+      hasDropdown: true,
+      dropdownItems: [
+        { name: 'Global Prayer', href: '/globalprayer' },
+        { name: 'Contact Us', href: '/contact' },
+      ]
+    }
   ];
 
   return (
@@ -101,7 +111,7 @@ export function Header() {
                 >
                   <Link
                     href={item.href}
-                    className={`flex items-center gap-1 px-5 h-full text-sm font-black transition-all duration-200 uppercase tracking-tight ${
+                    className={`flex items-center gap-1 px-5 h-full text-sm font-bold transition-all duration-200 uppercase tracking-tight ${
                       item.active
                         ? 'bg-[#facc15] text-[#001f3f]'
                         : item.isSpecial
@@ -129,7 +139,7 @@ export function Header() {
                           <Link
                             key={index}
                             href={dropdownItem.href}
-                            className="block px-8 py-2.5 text-[13px] font-bold text-[#001f3f]/70 hover:text-[#001f3f] hover:bg-gray-50 transition-colors"
+                            className="block px-8 py-2.5 text-[13px] font-medium text-[#001f3f]/70 hover:text-[#001f3f] hover:bg-gray-50 transition-colors"
                           >
                             {dropdownItem.name}
                           </Link>
@@ -143,8 +153,8 @@ export function Header() {
 
             {/* CTA Button */}
             <div className="hidden md:flex items-center gap-4">
-              <Button className="bg-[#002855] hover:bg-[#001f3f] text-white rounded-none px-10 py-7 font-black uppercase tracking-[0.15em] text-[11px] shadow-lg transition-transform active:scale-95">
-                DONATE NOW
+              <Button asChild className="bg-[#002855] hover:bg-[#001f3f] text-white rounded-none px-10 py-7 font-bold uppercase tracking-[0.15em] text-[11px] shadow-lg transition-transform active:scale-95">
+                <Link href="/donate">Give Now</Link>
               </Button>
             </div>
 
@@ -162,7 +172,7 @@ export function Header() {
         <div className={`lg:hidden fixed inset-0 z-50 bg-white transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
           <div className="p-6">
             <div className="flex justify-between items-center mb-10">
-              <span className="text-2xl font-black text-[#001f3f]">MENU</span>
+              <span className="text-2xl font-bold text-[#001f3f]">MENU</span>
               <button onClick={() => setIsOpen(false)}><X size={32} /></button>
             </div>
             <div className="space-y-4">
@@ -170,7 +180,7 @@ export function Header() {
                 <div key={item.name} className="border-b border-gray-100 pb-4">
                   <Link
                     href={item.href}
-                    className={`text-xl font-black uppercase tracking-tighter ${item.isSpecial ? 'text-red-600' : 'text-[#001f3f]'}`}
+                    className={`text-xl font-bold uppercase tracking-tighter ${item.isSpecial ? 'text-red-600' : 'text-[#001f3f]'}`}
                     onClick={() => setIsOpen(false)}
                   >
                     {item.name}
@@ -179,8 +189,8 @@ export function Header() {
               ))}
             </div>
             <div className="mt-10">
-               <Button className="w-full bg-[#facc15] text-[#001f3f] hover:bg-[#002855] hover:text-white rounded-none py-8 font-black uppercase tracking-widest">
-                DONATE NOW
+               <Button asChild className="w-full bg-[#facc15] text-[#001f3f] hover:bg-[#002855] hover:text-white rounded-none py-8 font-bold uppercase tracking-widest">
+                <Link href="/donate">Give Now</Link>
               </Button>
             </div>
           </div>

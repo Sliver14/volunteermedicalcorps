@@ -17,7 +17,7 @@ export function Footer() {
             <h3 className="text-[#facc15] text-2xl font-bold mb-6">Quick Links</h3>
             <ul className="space-y-4">
               {[
-                { name: 'Donate Now', href: '/donate' },
+                { name: 'Give Now', href: '/donate' },
                 { name: 'Upcoming Events', href: '/events' },
                 { name: 'Volunteers', href: '/volunteers' },
                 { name: 'Become a Volunteer', href: '/become-volunteer' },
