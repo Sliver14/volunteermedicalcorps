@@ -1,22 +1,41 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { SectionWrapper } from '@/components/section-wrapper';
 
 export function CTA() {
+  const partnerOptions = [
+    { title: 'Sponsor Relief Missions', image: 'https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=2070&auto=format&fit=crop' },
+    { title: 'Adopt a Community Health Extension Worker', image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop' },
+    { title: 'Sponsor a Good Deeds Project Today!', image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop' },
+  ];
+
   return (
     <SectionWrapper className="bg-[#002855] text-white">
-      <div className="text-center max-w-3xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-black mb-6">READY TO MAKE A DIFFERENCE?</h2>
-        <p className="text-xl text-white/80 mb-10">Whether by volunteering your medical expertise or supporting our missions financially, your contribution saves lives.</p>
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Button asChild className="bg-[#facc15] hover:bg-white text-[#001f3f] rounded-none px-10 py-7 font-black uppercase tracking-[0.15em] text-[11px] shadow-lg">
-            <Link href="/register">BECOME A VOLUNTEER</Link>
-          </Button>
-          <Button asChild variant="outline" className="border-2 border-[#facc15] text-[#facc15] hover:bg-[#facc15] hover:text-[#001f3f] rounded-none px-10 py-7 font-black uppercase tracking-[0.15em] text-[11px] shadow-lg">
-            <Link href="/donate">Give Now</Link>
-          </Button>
-        </div>
+      <div className="text-center mb-16">
+        <h2 className="text-sm font-bold text-[#facc15] uppercase tracking-widest mb-2">Get Involved</h2>
+        <h3 className="text-4xl md:text-5xl font-black mb-4 uppercase">Partner with Us</h3>
+        <div className="h-1.5 w-24 bg-[#facc15] mx-auto mb-6"></div>
+      </div>
+      
+      <div className="grid md:grid-cols-3 gap-8">
+        {partnerOptions.map((option, index) => (
+          <div key={index} className="bg-white text-[#001f3f] p-8 shadow-2xl flex flex-col h-full border-b-8 border-[#facc15]">
+            <div className="relative aspect-video mb-6 overflow-hidden">
+              <Image 
+                src={option.image} 
+                alt={option.title} 
+                fill 
+                className="object-cover" 
+              />
+            </div>
+            <h4 className="text-xl font-black mb-8 uppercase leading-tight flex-grow">{option.title}</h4>
+            <Button asChild className="w-full bg-[#001f3f] hover:bg-[#002855] text-white rounded-none font-bold uppercase tracking-widest py-7 shadow-lg">
+              <Link href="/donate">Donate</Link>
+            </Button>
+          </div>
+        ))}
       </div>
     </SectionWrapper>
   );

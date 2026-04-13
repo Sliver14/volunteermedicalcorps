@@ -1,14 +1,15 @@
 import { Header } from '@/components/header';
 import { HeroSection } from '@/components/hero-section';
 import { Footer } from '@/components/footer';
-import { ImpactSection } from '@/components/impact-section';
 import { AboutPreview } from '@/components/sections/AboutPreview';
+import { ProjectsPreview } from '@/components/sections/ProjectsPreview';
 import { Campaigns } from '@/components/sections/Campaigns';
 import { Testimonials } from '@/components/sections/Testimonials';
+import { NewsSection } from '@/components/news-section';
+import { MediaPreview } from '@/components/sections/MediaPreview';
 import { Events } from '@/components/sections/Events';
-import { Blog } from '@/components/sections/Blog';
 import { CTA } from '@/components/sections/CTA';
-import { Newsletter } from '@/components/sections/Newsletter';
+import { ImpactSection } from '@/components/impact-section';
 
 export default function Home() {
   return (
@@ -18,12 +19,13 @@ export default function Home() {
         <HeroSection />
         <ImpactSection />
         <AboutPreview />
+        <ProjectsPreview />
         <Campaigns />
         <Events />
         <Testimonials />
-        <Blog />
+        <NewsSection />
+        <MediaPreview />
         <CTA />
-        <Newsletter />
       </main>
       <Footer />
     </div>

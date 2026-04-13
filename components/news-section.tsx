@@ -1,177 +1,74 @@
 'use client';
 
-import { Calendar, User } from 'lucide-react';
+import React from 'react';
+import { SectionWrapper } from '@/components/section-wrapper';
+import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
+import Image from 'next/image';
 
 const newsArticles = [
   {
     id: 1,
-    title: 'UN Recognizes Alone Organization for Community Development',
-    excerpt: 'Our efforts in sustainable development have been recognized by the United Nations at the annual SDG Summit.',
-    date: 'April 3, 2026',
-    author: 'Global News Team',
-    category: 'Awards',
+    title: 'VMC Volunteers Deploy to Regions of Crisis',
+    date: 'April 10, 2026',
+    image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop',
+    category: 'Relief',
   },
   {
     id: 2,
-    title: 'Partnership Expansion: Reaching 20 New Communities',
-    excerpt: 'We announce strategic partnerships with local organizations to expand our reach and impact in Asia and Africa.',
-    date: 'March 31, 2026',
-    author: 'Partnership Department',
-    category: 'Partnerships',
+    title: 'New VMC Academy Courses Launched for Health Workers',
+    date: 'April 8, 2026',
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop',
+    category: 'Education',
   },
   {
     id: 3,
-    title: 'Volunteer Stories: How One Person Changed a Village',
-    excerpt: 'Meet Sarah, whose dedication and passion inspired an entire community to take action for environmental conservation.',
-    date: 'March 28, 2026',
-    author: 'Sarah Mitchell',
-    category: 'Stories',
-  },
-  {
-    id: 4,
-    title: 'Impact Report 2025: By The Numbers',
-    excerpt: 'Our comprehensive annual report shows remarkable progress across all program areas with detailed metrics and stories.',
-    date: 'March 25, 2026',
-    author: 'Research & Impact Team',
-    category: 'Reports',
-  },
-  {
-    id: 5,
-    title: 'Innovation in Social Enterprise: New Revenue Model',
-    excerpt: 'Learn how our new social enterprise initiative creates sustainable funding while empowering local entrepreneurs.',
-    date: 'March 22, 2026',
-    author: 'Innovation Lab',
-    category: 'Innovation',
-  },
-  {
-    id: 6,
-    title: 'Climate Action Campaign Launches Globally',
-    excerpt: 'Join our new initiative to address climate change through community-based environmental projects worldwide.',
-    date: 'March 19, 2026',
-    author: 'Environmental Team',
-    category: 'Environment',
+    title: 'Global Hospital Outreach Reaches Over 1000 Patients',
+    date: 'April 5, 2026',
+    image: 'https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=2070&auto=format&fit=crop',
+    category: 'Impact',
   },
 ];
 
 export function NewsSection() {
   return (
-    <section id="news" className="py-20 bg-gray-50 dark:bg-slate-950">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            Latest News & Updates
-          </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Stay informed about our initiatives, partnerships, and impact stories from around the world.
-          </p>
+    <SectionWrapper className="bg-gray-50">
+      <div className="flex justify-between items-end mb-12">
+        <div>
+          <h2 className="text-3xl font-black text-[#001f3f] mb-4 uppercase">Latest News & Updates</h2>
+          <div className="h-1 w-20 bg-[#facc15]"></div>
         </div>
-
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          {/* Featured Article */}
-          <div className="md:col-span-2 lg:col-span-1 bg-white dark:bg-slate-900 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow lg:row-span-2">
-            <div className="bg-gradient-to-br from-green-400 to-emerald-500 h-64 flex items-center justify-center text-white text-sm font-medium">
-              Featured News Image
-            </div>
-            <div className="p-8 flex flex-col h-full">
-              <div className="mb-4">
-                <span className="inline-block px-3 py-1 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200 text-sm font-semibold rounded-full">
-                  {newsArticles[0].category}
-                </span>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex-grow">
-                {newsArticles[0].title}
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-6">
-                {newsArticles[0].excerpt}
-              </p>
-              <div className="flex flex-col gap-3 pt-4 border-t border-gray-200 dark:border-gray-700">
-                <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-                  <User className="w-4 h-4" />
-                  <span>{newsArticles[0].author}</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-                  <Calendar className="w-4 h-4" />
-                  <span>{newsArticles[0].date}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Other Articles Grid */}
-          <div className="md:col-span-2 lg:col-span-1 space-y-6">
-            {newsArticles.slice(1, 4).map((article) => (
-              <article
-                key={article.id}
-                className="bg-white dark:bg-slate-900 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow border-l-4 border-amber-600"
-              >
-                <div className="flex items-start justify-between gap-4 mb-3">
-                  <span className="inline-block px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-200 text-xs font-semibold rounded">
-                    {article.category}
-                  </span>
-                </div>
-                <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
-                  {article.title}
-                </h4>
-                <p className="text-gray-600 dark:text-gray-400 text-sm line-clamp-2 mb-3">
-                  {article.excerpt}
-                </p>
-                <div className="flex items-center gap-3 text-xs text-gray-500 dark:text-gray-400">
-                  <Calendar className="w-3 h-3" />
-                  <span>{article.date}</span>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-
-        {/* All News List */}
-        <div className="bg-white dark:bg-slate-900 rounded-lg shadow-md overflow-hidden">
-          <div className="px-6 py-8 border-b border-gray-200 dark:border-gray-700">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white">All News</h3>
-          </div>
-
-          <div className="divide-y divide-gray-200 dark:divide-gray-700">
-            {newsArticles.map((article) => (
-              <article
-                key={article.id}
-                className="p-6 hover:bg-gray-50 dark:hover:bg-slate-800/50 transition-colors"
-              >
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                  <div className="flex-grow">
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="inline-block px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs font-semibold rounded">
-                        {article.category}
-                      </span>
-                    </div>
-                    <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
-                      {article.title}
-                    </h4>
-                    <div className="flex flex-wrap gap-4 text-sm text-gray-600 dark:text-gray-400">
-                      <div className="flex items-center gap-1">
-                        <User className="w-4 h-4" />
-                        <span>{article.author}</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Calendar className="w-4 h-4" />
-                        <span>{article.date}</span>
-                      </div>
-                    </div>
-                  </div>
-                  <button className="text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-300 font-semibold whitespace-nowrap">
-                    Read →
-                  </button>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-
-        <div className="text-center mt-12">
-          <button className="inline-block px-8 py-3 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-lg transition-colors">
-            View All News
-          </button>
-        </div>
+        <Link href="/blog" className="text-[#001f3f] font-bold uppercase tracking-widest hover:text-[#facc15] transition-colors text-sm flex items-center gap-2">
+          View All News <ArrowRight size={16} />
+        </Link>
       </div>
-    </section>
+
+      <div className="grid md:grid-cols-3 gap-8">
+        {newsArticles.map((article) => (
+          <div key={article.id} className="bg-white group cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-300 border-b-4 border-transparent hover:border-[#facc15]">
+            <div className="relative aspect-video overflow-hidden">
+              <Image 
+                src={article.image} 
+                alt={article.title} 
+                fill 
+                className="object-cover transition-transform duration-500 group-hover:scale-110" 
+              />
+              <div className="absolute top-4 left-4 bg-[#facc15] text-[#001f3f] text-[10px] font-black px-3 py-1 uppercase tracking-widest">
+                {article.category}
+              </div>
+            </div>
+            <div className="p-8">
+              <div className="text-gray-400 text-xs font-bold uppercase tracking-widest mb-3">{article.date}</div>
+              <h3 className="text-xl font-black text-[#001f3f] mb-6 leading-tight group-hover:text-[#facc15] transition-colors uppercase">
+                {article.title}
+              </h3>
+              <div className="flex items-center gap-2 text-[#001f3f] font-bold text-xs uppercase tracking-widest group-hover:translate-x-2 transition-transform">
+                Read More <ArrowRight size={14} className="text-[#facc15]" />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </SectionWrapper>
   );
 }

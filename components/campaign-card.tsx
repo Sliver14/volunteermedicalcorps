@@ -12,30 +12,51 @@ interface CampaignProps {
   raised: number;
 }
 
-export function CampaignCard({ id, title, description, image, target, raised }: CampaignProps) {
-  const percentage = Math.min(100, Math.round((raised / target) * 100));
+export function CampaignCard({ id, title, description, image, target = 0, raised = 0 }: CampaignProps) {
+  const safeTarget = target || 1; // Prevent division by zero
+  const percentage = Math.min(100, Math.round((raised / safeTarget) * 100));
 
   return (
-    <div className="flex flex-col bg-white border border-gray-100 shadow-sm">
-      <div className="relative aspect-[4/3] overflow-hidden">
-        <Image src={image} alt={title} fill className="object-cover" />
+    <div className="flex flex-col bg-white shadow-xl hover:shadow-2xl transition-all duration-300 border-b-8 border-[#001f3f] group">
+      <div className="relative aspect-video overflow-hidden">
+        <Image 
+          src={image || 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop'} 
+          alt={title} 
+          fill 
+          className="object-cover transition-transform duration-500 group-hover:scale-110" 
+        />
+        <div className="absolute top-4 left-4 bg-[#facc15] text-[#001f3f] text-[10px] font-black px-3 py-1 uppercase tracking-widest shadow-lg">
+          Active Campaign
+        </div>
       </div>
-      <div className="p-6 flex-1 flex flex-col">
-        <h3 className="text-xl font-black text-[#001f3f] mb-3 line-clamp-2">{title}</h3>
-        <p className="text-gray-500 mb-6 line-clamp-3 text-sm flex-1">{description}</p>
+      <div className="p-8 flex-1 flex flex-col">
+        <h3 className="text-xl font-black text-[#001f3f] mb-4 uppercase leading-tight group-hover:text-[#facc15] transition-colors">{title}</h3>
+        <p className="text-gray-500 mb-8 line-clamp-3 text-sm leading-relaxed flex-1 font-medium">{description}</p>
         
-        <div className="mb-6">
-          <div className="flex justify-between text-sm font-bold mb-2">
-            <span className="text-[#001f3f]">Raised: ${raised.toLocaleString()}</span>
-            <span className="text-[#001f3f]">Goal: ${target.toLocaleString()}</span>
+        <div className="space-y-4 mb-8">
+          <div className="flex justify-between items-end">
+            <div>
+              <span className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Raised</span>
+              <span className="text-lg font-black text-[#001f3f]">${(raised || 0).toLocaleString()}</span>
+            </div>
+            <div className="text-right">
+              <span className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Goal</span>
+              <span className="text-sm font-bold text-gray-600">${(target || 0).toLocaleString()}</span>
+            </div>
           </div>
-          <div className="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
-            <div className="bg-[#facc15] h-full" style={{ width: `${percentage}%` }} />
+          <div className="relative h-3 bg-gray-100 overflow-hidden">
+            <div 
+              className="absolute top-0 left-0 h-full bg-[#facc15] transition-all duration-1000 ease-out" 
+              style={{ width: `${percentage}%` }}
+            />
+          </div>
+          <div className="text-right">
+            <span className="text-[10px] font-black text-[#facc15] uppercase tracking-tighter">{percentage}% Complete</span>
           </div>
         </div>
 
-        <Button asChild className="w-full bg-[#002855] hover:bg-[#001f3f] text-white rounded-none py-6 font-black uppercase tracking-widest text-xs">
-          <Link href="/donate">Give Now</Link>
+        <Button asChild className="w-full bg-[#001f3f] hover:bg-[#002855] text-white rounded-none py-8 font-black uppercase tracking-widest text-xs shadow-lg transition-transform active:scale-95">
+          <Link href={`/donate?campaign=${id}`}>Give Now</Link>
         </Button>
       </div>
     </div>

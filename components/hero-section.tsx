@@ -23,15 +23,15 @@ export function HeroSection() {
           {/* Left Content */}
           <div className="max-w-xl pt-12 lg:pt-0">
             <h2 className="text-[#002855] text-xl md:text-2xl font-bold tracking-wider mb-3 uppercase">
-              Medical Relief & Support
+              Volunteer Medical Corps
             </h2>
             
             <h1 className="text-[3.8rem] md:text-[4.8rem] lg:text-[5.5rem] leading-none font-extrabold text-[#002855] mb-8">
-              HEALING THE<br />WORLD
+              Join our Community<br />Today!
             </h1>
 
             <p className="text-[#002855]/80 text-[17px] leading-relaxed max-w-lg mb-10 font-medium">
-              With a presence on every continent, our volunteer medical corps unites healthcare professionals, resources, and life-saving aid to drive meaningful change in disaster zones and vulnerable communities.
+              A global network of Christian health workers, para-medics, volunteers and students committed to providing medical care and relief assistance in regions of crisis.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -39,15 +39,21 @@ export function HeroSection() {
                 asChild
                 className="bg-[#facc15] hover:bg-[#e5b800] text-[#002855] font-bold rounded-none px-10 py-7 text-sm uppercase tracking-wider shadow-md transition-all active:scale-[0.98]"
               >
-                <Link href="/register">JOIN THE CORPS</Link>
+                <Link href="/login">Log In</Link>
               </Button>
               
               <Button 
                 asChild
-                variant="outline"
-                className="border-2 border-[#002855] text-[#002855] hover:bg-[#002855] hover:text-white font-bold rounded-none px-10 py-7 text-sm uppercase tracking-wider transition-all"
+                className="bg-[#002855] hover:bg-[#001f3f] text-white font-bold rounded-none px-10 py-7 text-sm uppercase tracking-wider shadow-md transition-all active:scale-[0.98]"
               >
-                <Link href="/campaigns">OUR CAMPAIGNS</Link>
+                <Link href="/register">Sign Up</Link>
+              </Button>
+
+              <Button 
+                asChild
+                className="bg-red-600 hover:bg-red-700 text-white font-bold rounded-none px-10 py-7 text-sm uppercase tracking-wider shadow-md transition-all active:scale-[0.98]"
+              >
+                <Link href="/donate">Give</Link>
               </Button>
             </div>
           </div>
