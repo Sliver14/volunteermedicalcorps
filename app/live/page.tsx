@@ -24,7 +24,7 @@ export default function LiveStreamPage() {
                 <Users size={18} />
                 <span>1,240 Watching Now</span>
               </div>
-              <Button variant="outline" className="border-white/20 text-white hover:bg-white hover:text-[#001f3f] rounded-none px-6">
+              <Button variant="outline" className="border-white/20 text-[#001f3f] rounded-none px-6">
                 <Share2 size={16} className="mr-2" /> Share
               </Button>
             </div>
