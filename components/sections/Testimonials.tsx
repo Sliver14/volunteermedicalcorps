@@ -28,24 +28,24 @@ export function Testimonials() {
 
   return (
     <SectionWrapper className="bg-gray-50">
-      <div className="text-center mb-16">
-        <h2 className="text-sm font-bold text-[#facc15] uppercase tracking-widest mb-2">Testimonials</h2>
-        <h3 className="text-4xl md:text-5xl font-black text-[#001f3f] mb-4 uppercase">Voices of Impact</h3>
+      <div className="text-center mb-12 md:mb-16">
+        <h2 className="text-xs md:text-sm font-bold text-[#facc15] uppercase tracking-widest mb-2">Testimonials</h2>
+        <h3 className="text-3xl md:text-5xl font-black text-[#001f3f] mb-4 uppercase leading-tight">Voices of Impact</h3>
         <div className="h-1.5 w-24 bg-[#facc15] mx-auto mb-6"></div>
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {testimonials.map((t, index) => (
-          <div key={index} className="bg-white p-10 shadow-xl relative border-t-4 border-[#facc15]">
-            <div className="text-[#facc15] text-8xl font-serif absolute -top-4 left-4 opacity-10">"</div>
-            <p className="text-gray-600 mb-8 relative z-10 italic leading-relaxed text-lg">"{t.text}"</p>
-            <div className="flex items-center gap-4 border-t border-gray-100 pt-6">
-              <div className="w-14 h-14 bg-gray-200 rounded-full overflow-hidden shadow-md">
+          <div key={index} className="bg-white p-6 md:p-10 shadow-xl relative border-t-4 border-[#facc15] flex flex-col h-full">
+            <div className="text-[#facc15] text-6xl md:text-8xl font-serif absolute -top-2 md:-top-4 left-4 opacity-10">"</div>
+            <p className="text-gray-600 mb-8 relative z-10 italic leading-relaxed text-base md:text-lg flex-1">"{t.text}"</p>
+            <div className="flex items-center gap-4 border-t border-gray-100 pt-6 mt-auto">
+              <div className="w-12 h-12 md:w-14 md:h-14 bg-gray-200 rounded-full overflow-hidden shadow-md shrink-0">
                 <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
               </div>
               <div>
-                <h4 className="font-black text-[#001f3f] text-sm uppercase">{t.name}</h4>
-                <div className="text-[11px] text-[#facc15] font-bold uppercase tracking-widest">{t.location}</div>
-                <div className="text-[10px] text-gray-400 font-medium uppercase tracking-tighter mt-1">{t.role}</div>
+                <h4 className="font-black text-[#001f3f] text-xs md:text-sm uppercase">{t.name}</h4>
+                <div className="text-[9px] md:text-[11px] text-[#facc15] font-bold uppercase tracking-widest">{t.location}</div>
+                <div className="text-[8px] md:text-[10px] text-gray-400 font-medium uppercase tracking-tighter mt-1">{t.role}</div>
               </div>
             </div>
           </div>

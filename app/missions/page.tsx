@@ -29,7 +29,7 @@ export default function MissionsPage() {
   return (
     <PageLayout>
       {/* Hero */}
-      <section className="relative py-32 bg-[#001f3f] text-white overflow-hidden">
+      <section className="relative py-24 md:py-32 bg-[#001f3f] text-white overflow-hidden text-center">
         <div className="absolute inset-0 opacity-20">
           <Image 
             src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop" 
@@ -38,9 +38,9 @@ export default function MissionsPage() {
             className="object-cover"
           />
         </div>
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10 text-center">
-          <h1 className="text-4xl md:text-7xl font-black mb-6 uppercase tracking-tighter leading-none">Medical <span className="text-[#facc15]">Missions</span></h1>
-          <p className="text-xl md:text-2xl text-[#facc15] font-bold uppercase tracking-widest max-w-3xl mx-auto">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
+          <h1 className="text-3xl md:text-7xl font-black mb-6 uppercase tracking-tighter leading-tight">Medical <span className="text-[#facc15]">Missions</span></h1>
+          <p className="text-lg md:text-2xl text-[#facc15] font-bold uppercase tracking-widest max-w-3xl mx-auto">
             Taking the healing power of Jesus Christ to the ends of the earth.
           </p>
         </div>
@@ -48,9 +48,9 @@ export default function MissionsPage() {
 
       {/* Overview */}
       <SectionWrapper className="bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-black text-[#001f3f] mb-8 uppercase">A Global Mandate of Care</h2>
-          <p className="text-xl text-gray-600 leading-relaxed mb-12">
+        <div className="max-w-4xl mx-auto text-center px-4">
+          <h2 className="text-2xl md:text-3xl font-black text-[#001f3f] mb-6 md:mb-8 uppercase">A Global Mandate of Care</h2>
+          <p className="text-base md:text-xl text-gray-600 leading-relaxed mb-8 md:mb-12">
             Our medical missions are at the heart of what we do. We go where others won't, reaching the most vulnerable with expert care, essential aid, and the message of hope. Every mission is a step towards a healthier, more resilient world.
           </p>
           <div className="h-1.5 w-24 bg-[#facc15] mx-auto"></div>
@@ -59,16 +59,16 @@ export default function MissionsPage() {
 
       {/* Mission Grid */}
       <SectionWrapper className="bg-gray-50">
-        <div className="grid md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
           {missions.map((m, i) => (
-            <div key={i} className="bg-white group shadow-xl border-b-8 border-[#001f3f] overflow-hidden flex flex-col h-full">
+            <div key={i} className="bg-white group shadow-xl border-b-8 border-[#001f3f] overflow-hidden flex flex-col h-full transition-transform hover:-translate-y-1">
               <div className="relative aspect-video overflow-hidden">
                 <Image src={m.image} alt={m.title} fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
               </div>
-              <div className="p-8 flex-1 flex flex-col">
-                <h3 className="text-2xl font-black text-[#001f3f] uppercase mb-4 group-hover:text-[#facc15] transition-colors">{m.title}</h3>
+              <div className="p-6 md:p-8 flex-1 flex flex-col">
+                <h3 className="text-xl md:text-2xl font-black text-[#001f3f] uppercase mb-4 group-hover:text-[#facc15] transition-colors">{m.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-8 flex-1 font-medium">{m.desc}</p>
-                <Button asChild className="w-full bg-[#001f3f] hover:bg-[#002855] text-white rounded-none py-6 font-black uppercase tracking-widest text-[10px]">
+                <Button asChild className="w-full bg-[#001f3f] hover:bg-[#002855] text-white rounded-none py-6 font-black uppercase tracking-widest text-[10px] md:text-xs">
                   <Link href="/register">Volunteer for this Mission</Link>
                 </Button>
               </div>
@@ -78,43 +78,43 @@ export default function MissionsPage() {
       </SectionWrapper>
 
       {/* Impact Stats */}
-      <section className="bg-[#facc15] py-20 text-[#001f3f]">
+      <section className="bg-[#facc15] py-16 md:py-20 text-[#001f3f]">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-12 text-center">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 text-center">
             <div className="space-y-2">
-              <div className="text-5xl font-black tracking-tighter">50+</div>
-              <div className="text-xs font-bold uppercase tracking-widest opacity-70">Active Missions</div>
+              <div className="text-3xl md:text-5xl font-black tracking-tighter">50+</div>
+              <div className="text-[9px] md:text-xs font-bold uppercase tracking-widest opacity-70 leading-tight">Active Missions</div>
             </div>
             <div className="space-y-2">
-              <div className="text-5xl font-black tracking-tighter">150K+</div>
-              <div className="text-xs font-bold uppercase tracking-widest opacity-70">Volunteers</div>
+              <div className="text-3xl md:text-5xl font-black tracking-tighter">150K+</div>
+              <div className="text-[9px] md:text-xs font-bold uppercase tracking-widest opacity-70 leading-tight">Volunteers</div>
             </div>
             <div className="space-y-2">
-              <div className="text-5xl font-black tracking-tighter">200+</div>
-              <div className="text-xs font-bold uppercase tracking-widest opacity-70">Crisis Zones Reached</div>
+              <div className="text-3xl md:text-5xl font-black tracking-tighter">200+</div>
+              <div className="text-[9px] md:text-xs font-bold uppercase tracking-widest opacity-70 leading-tight">Crisis Zones Reached</div>
             </div>
             <div className="space-y-2">
-              <div className="text-5xl font-black tracking-tighter">Millions</div>
-              <div className="text-xs font-bold uppercase tracking-widest opacity-70">Lives Impacted</div>
+              <div className="text-3xl md:text-5xl font-black tracking-tighter">Millions</div>
+              <div className="text-[9px] md:text-xs font-bold uppercase tracking-widest opacity-70 leading-tight">Lives Impacted</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Call to Action */}
-      <SectionWrapper className="bg-white">
-        <div className="bg-[#001f3f] p-16 text-white text-center shadow-2xl border-b-8 border-[#facc15] relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-full bg-[#facc15]/5 skew-x-12 translate-x-1/2"></div>
+      <SectionWrapper className="bg-white px-4">
+        <div className="bg-[#001f3f] p-8 md:p-16 text-white text-center shadow-2xl border-b-8 border-[#facc15] relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-full h-full bg-[#facc15]/5 skew-x-12 translate-x-1/2"></div>
           <div className="relative z-10">
-            <h2 className="text-3xl md:text-5xl font-black mb-8 uppercase">Become a Mission Partner</h2>
-            <p className="text-xl text-white/70 mb-12 max-w-2xl mx-auto">
+            <h2 className="text-2xl md:text-5xl font-black mb-6 md:mb-8 uppercase leading-tight">Become a Mission Partner</h2>
+            <p className="text-base md:text-xl text-white/70 mb-10 md:mb-12 max-w-2xl mx-auto">
               Your partnership enables us to deploy teams and deliver aid where it's most needed. Stand with us as we heal the world.
             </p>
-            <div className="flex flex-wrap justify-center gap-6">
-              <Button asChild className="bg-[#facc15] hover:bg-white text-[#001f3f] rounded-none px-12 py-8 text-lg font-black uppercase tracking-widest shadow-xl">
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+              <Button asChild className="bg-[#facc15] hover:bg-white text-[#001f3f] rounded-none px-8 md:px-12 py-6 md:py-8 text-sm md:text-lg font-black uppercase tracking-widest shadow-xl w-full sm:w-auto">
                 <Link href="/donate">Sponsor a Mission</Link>
               </Button>
-              <Button asChild variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#001f3f] rounded-none px-12 py-8 text-lg font-black uppercase tracking-widest">
+              <Button asChild variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#001f3f] rounded-none px-8 md:px-12 py-6 md:py-8 text-sm md:text-lg font-black uppercase tracking-widest w-full sm:w-auto transition-all">
                 <Link href="/register">Join a Mission</Link>
               </Button>
             </div>
