@@ -84,10 +84,6 @@ export function Footer() {
               </button>
             </div>
 
-            <p className="text-emerald-400 text-sm mt-4 flex items-center gap-2 justify-center lg:justify-start">
-              <span className="text-lg">✓</span> 
-              Stay updated with our missions.
-            </p>
           </div>
         </div>
       </div>
