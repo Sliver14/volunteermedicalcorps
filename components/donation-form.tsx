@@ -3,13 +3,13 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Heart, Check } from 'lucide-react';
+import { Heart, Check, ShieldCheck, CreditCard, Landmark } from 'lucide-react';
 
-const donationAmounts = [10, 25, 50, 100, 250, 500];
+const donationAmounts = [50, 100, 250, 500, 1000, 2500];
 
 export function DonationForm() {
   const [customAmount, setCustomAmount] = useState('');
-  const [selectedAmount, setSelectedAmount] = useState(50);
+  const [selectedAmount, setSelectedAmount] = useState(100);
   const [isCustom, setIsCustom] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState('card');
   const [formData, setFormData] = useState({
@@ -45,205 +45,199 @@ export function DonationForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Donation submitted:', {
-      amount: selectedAmount || customAmount,
-      method: paymentMethod,
-      donor: formData,
-    });
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
       setFormData({ firstName: '', lastName: '', email: '', terms: false });
-      setSelectedAmount(50);
+      setSelectedAmount(100);
       setCustomAmount('');
-    }, 3000);
+    }, 5000);
   };
 
   const finalAmount = isCustom && customAmount ? parseInt(customAmount) : selectedAmount;
 
   if (submitted) {
     return (
-      <section className="py-20 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <div className="bg-white dark:bg-slate-900 rounded-lg shadow-lg p-8 md:p-12 text-center">
-            <div className="flex justify-center mb-6">
-              <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center animate-pulse">
-                <Check className="w-8 h-8 text-green-600 dark:text-green-400" />
-              </div>
-            </div>
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-3">
-              Thank You!
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 mb-2">
-              Your generous donation of ${finalAmount} has been received.
-            </p>
-            <p className="text-gray-600 dark:text-gray-400">
-              A confirmation email has been sent to {formData.email}
-            </p>
+      <div className="bg-white p-8 md:p-16 shadow-2xl border-t-8 border-[#facc15] text-center max-w-2xl mx-auto my-12">
+        <div className="flex justify-center mb-8">
+          <div className="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center animate-bounce">
+            <Check className="w-10 h-10 text-green-600" />
           </div>
         </div>
-      </section>
+        <h2 className="text-3xl font-black text-[#001f3f] uppercase mb-4">Generosity Received!</h2>
+        <p className="text-xl text-gray-600 mb-6 font-medium">
+          Your generous donation of <span className="text-[#001f3f] font-black">${finalAmount.toLocaleString()}</span> has been processed successfully.
+        </p>
+        <p className="text-gray-400 text-sm uppercase tracking-widest font-bold">
+          A receipt has been sent to {formData.email}
+        </p>
+        <Button className="mt-10 bg-[#001f3f] text-white rounded-none px-10 py-6 uppercase font-black tracking-widest" onClick={() => setSubmitted(false)}>
+          Back to Donation
+        </Button>
+      </div>
     );
   }
 
   return (
-    <section className="py-20 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-        <div className="bg-white dark:bg-slate-900 rounded-lg shadow-lg overflow-hidden">
-          {/* Header */}
-          <div className="bg-gradient-to-r from-amber-600 to-orange-600 text-white p-8">
-            <div className="flex items-center gap-3 mb-2">
-              <Heart className="w-6 h-6" />
-              <h2 className="text-3xl font-bold">Make Your Donation</h2>
-            </div>
-            <p className="text-amber-100">Your support creates lasting change in communities worldwide.</p>
+    <div className="max-w-4xl mx-auto bg-white shadow-2xl overflow-hidden border-b-8 border-[#facc15] mb-24">
+      {/* Header */}
+      <div className="bg-[#001f3f] text-white p-8 md:p-12 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-[#facc15]/10 skew-x-12 translate-x-1/2"></div>
+        <div className="relative z-10">
+          <div className="flex items-center gap-3 mb-4">
+            <Heart className="w-8 h-8 text-[#facc15] fill-current" />
+            <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter">Your Gift Saves Lives</h2>
           </div>
-
-          {/* Content */}
-          <div className="p-8 md:p-12">
-            <form onSubmit={handleSubmit} className="space-y-8">
-              {/* Amount Selection */}
-              <div>
-                <label className="block text-lg font-bold text-gray-900 dark:text-white mb-4">
-                  Choose Donation Amount
-                </label>
-                <div className="grid grid-cols-3 md:grid-cols-6 gap-3 mb-6">
-                  {donationAmounts.map((amount) => (
-                    <button
-                      key={amount}
-                      type="button"
-                      onClick={() => handleAmountClick(amount)}
-                      className={`py-3 px-3 rounded-lg font-bold transition-all ${
-                        selectedAmount === amount && !isCustom
-                          ? 'bg-amber-600 text-white shadow-lg'
-                          : 'bg-gray-100 dark:bg-slate-800 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-slate-700'
-                      }`}
-                    >
-                      ${amount}
-                    </button>
-                  ))}
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <span className="text-gray-700 dark:text-gray-300 font-medium">Custom:</span>
-                  <div className="relative flex-1 max-w-xs">
-                    <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 dark:text-gray-400">
-                      $
-                    </span>
-                    <Input
-                      type="number"
-                      placeholder="Enter amount"
-                      value={customAmount}
-                      onChange={handleCustomAmount}
-                      min="1"
-                      className="pl-8"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Payment Method */}
-              <div>
-                <label className="block text-lg font-bold text-gray-900 dark:text-white mb-4">
-                  Select Payment Method
-                </label>
-                <div className="grid md:grid-cols-2 gap-4">
-                  {[
-                    { id: 'card', label: 'Credit/Debit Card', icon: '💳' },
-                    { id: 'bank', label: 'Bank Transfer', icon: '🏦' },
-                  ].map((method) => (
-                    <label
-                      key={method.id}
-                      className={`flex items-center gap-3 p-4 rounded-lg border-2 cursor-pointer transition-all ${
-                        paymentMethod === method.id
-                          ? 'border-amber-600 bg-amber-50 dark:bg-amber-900/20'
-                          : 'border-gray-200 dark:border-gray-700 hover:border-amber-300'
-                      }`}
-                    >
-                      <input
-                        type="radio"
-                        name="payment"
-                        value={method.id}
-                        checked={paymentMethod === method.id}
-                        onChange={(e) => setPaymentMethod(e.target.value)}
-                        className="w-4 h-4"
-                      />
-                      <span className="text-2xl">{method.icon}</span>
-                      <span className="font-medium text-gray-900 dark:text-white">
-                        {method.label}
-                      </span>
-                    </label>
-                  ))}
-                </div>
-              </div>
-
-              {/* Donor Information */}
-              <div>
-                <label className="block text-lg font-bold text-gray-900 dark:text-white mb-4">
-                  Donor Information
-                </label>
-                <div className="grid md:grid-cols-2 gap-4 mb-4">
-                  <Input
-                    type="text"
-                    name="firstName"
-                    placeholder="First Name"
-                    value={formData.firstName}
-                    onChange={handleInputChange}
-                    required
-                  />
-                  <Input
-                    type="text"
-                    name="lastName"
-                    placeholder="Last Name"
-                    value={formData.lastName}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </div>
-                <Input
-                  type="email"
-                  name="email"
-                  placeholder="Email Address"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  required
-                  className="mb-4"
-                />
-              </div>
-
-              {/* Terms & Conditions */}
-              <div>
-                <label className="flex items-start gap-3 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    name="terms"
-                    checked={formData.terms}
-                    onChange={handleInputChange}
-                    required
-                    className="w-5 h-5 mt-1 rounded border-gray-300"
-                  />
-                  <span className="text-gray-700 dark:text-gray-300">
-                    I agree to the terms of use and privacy policy. I authorize Alone to charge my payment method for this donation.
-                  </span>
-                </label>
-              </div>
-
-              {/* Submit Button */}
-              <Button
-                type="submit"
-                disabled={!formData.firstName || !formData.lastName || !formData.email || !formData.terms || (finalAmount < 1)}
-                className="w-full bg-amber-600 hover:bg-amber-700 disabled:bg-gray-400 text-white py-4 text-lg font-bold rounded-lg"
-              >
-                Donate ${finalAmount > 0 ? finalAmount : '0'}
-              </Button>
-
-              <p className="text-sm text-gray-600 dark:text-gray-400 text-center">
-                Your donation is secure and processed through verified payment partners.
-              </p>
-            </form>
-          </div>
+          <p className="text-lg text-white/70 max-w-2xl font-medium">Your contribution directly supports our medical missions and relief efforts globally. Join us in bringing healing to the nations.</p>
         </div>
       </div>
-    </section>
+
+      {/* Form Content */}
+      <div className="p-8 md:p-12">
+        <form onSubmit={handleSubmit} className="space-y-10">
+          
+          {/* Amount Selection */}
+          <div className="space-y-6">
+            <h3 className="text-lg font-black text-[#001f3f] uppercase border-b border-gray-100 pb-2">Select Donation Amount</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+              {donationAmounts.map((amount) => (
+                <button
+                  key={amount}
+                  type="button"
+                  onClick={() => handleAmountClick(amount)}
+                  className={`py-4 px-2 rounded-none font-black transition-all text-sm uppercase tracking-widest border-2 ${
+                    selectedAmount === amount && !isCustom
+                      ? 'bg-[#001f3f] text-white border-[#001f3f] shadow-xl'
+                      : 'bg-white border-gray-100 text-[#001f3f] hover:border-[#facc15] hover:bg-gray-50'
+                  }`}
+                >
+                  ${amount.toLocaleString()}
+                </button>
+              ))}
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center gap-4 pt-4">
+              <span className="text-gray-400 font-bold uppercase tracking-widest text-xs">Or enter custom amount:</span>
+              <div className="relative flex-1 w-full max-w-xs">
+                <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-[#001f3f] font-black">
+                  $
+                </span>
+                <Input
+                  type="number"
+                  placeholder="0.00"
+                  value={customAmount}
+                  onChange={handleCustomAmount}
+                  min="1"
+                  className="pl-10 py-6 rounded-none border-2 border-gray-100 focus-visible:ring-[#facc15] font-black text-[#001f3f]"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Payment Method */}
+          <div className="space-y-6">
+            <h3 className="text-lg font-black text-[#001f3f] uppercase border-b border-gray-100 pb-2">Payment Method</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                { id: 'card', label: 'Credit / Debit Card', icon: <CreditCard className="w-6 h-6" /> },
+                { id: 'bank', label: 'Direct Bank Transfer', icon: <Landmark className="w-6 h-6" /> },
+              ].map((method) => (
+                <label
+                  key={method.id}
+                  className={`flex items-center gap-4 p-6 rounded-none border-2 cursor-pointer transition-all ${
+                    paymentMethod === method.id
+                      ? 'border-[#001f3f] bg-gray-50'
+                      : 'border-gray-100 hover:border-[#facc15]'
+                  }`}
+                >
+                  <input
+                    type="radio"
+                    name="payment"
+                    value={method.id}
+                    checked={paymentMethod === method.id}
+                    onChange={(e) => setPaymentMethod(e.target.value)}
+                    className="w-4 h-4 accent-[#001f3f]"
+                  />
+                  <div className="text-[#001f3f]">{method.icon}</div>
+                  <span className="font-black text-[#001f3f] uppercase tracking-widest text-xs">
+                    {method.label}
+                  </span>
+                </label>
+              ))}
+            </div>
+          </div>
+
+          {/* Donor Info */}
+          <div className="space-y-6">
+            <h3 className="text-lg font-black text-[#001f3f] uppercase border-b border-gray-100 pb-2">Donor Information</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">First Name</label>
+                <Input
+                  type="text"
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleInputChange}
+                  required
+                  className="rounded-none border-gray-200 focus-visible:ring-[#facc15] py-6"
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Last Name</label>
+                <Input
+                  type="text"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleInputChange}
+                  required
+                  className="rounded-none border-gray-200 focus-visible:ring-[#facc15] py-6"
+                />
+              </div>
+            </div>
+            <div className="space-y-2">
+              <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Email Address</label>
+              <Input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                required
+                className="rounded-none border-gray-200 focus-visible:ring-[#facc15] py-6"
+              />
+            </div>
+          </div>
+
+          {/* Verification & Consent */}
+          <div className="bg-gray-50 p-6 space-y-4">
+            <label className="flex items-start gap-3 cursor-pointer group">
+              <input
+                type="checkbox"
+                name="terms"
+                checked={formData.terms}
+                onChange={handleInputChange}
+                required
+                className="w-5 h-5 mt-1 accent-[#001f3f] cursor-pointer"
+              />
+              <span className="text-xs text-gray-500 font-medium leading-relaxed group-hover:text-gray-700 transition-colors">
+                I agree to the <Link href="/terms" className="text-[#001f3f] font-black underline">Terms of Use</Link> and <Link href="/privacy" className="text-[#001f3f] font-black underline">Privacy Policy</Link>. I authorize the Volunteer Medical Corps to process this donation.
+              </span>
+            </label>
+            <div className="flex items-center gap-2 text-green-600">
+              <ShieldCheck size={16} />
+              <span className="text-[10px] font-black uppercase tracking-[0.2em]">Secure 256-bit SSL Encrypted Payment</span>
+            </div>
+          </div>
+
+          {/* Submit Button */}
+          <Button
+            type="submit"
+            disabled={!formData.firstName || !formData.lastName || !formData.email || !formData.terms || (finalAmount < 1)}
+            className="w-full bg-[#001f3f] hover:bg-[#002855] text-white py-10 text-xl font-black rounded-none uppercase tracking-[0.2em] shadow-2xl transition-all active:scale-[0.98]"
+          >
+            Complete Donation of ${finalAmount > 0 ? finalAmount.toLocaleString() : '0'}
+          </Button>
+        </form>
+      </div>
+    </div>
   );
 }
