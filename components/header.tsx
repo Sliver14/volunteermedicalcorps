@@ -85,23 +85,24 @@ export function Header() {
         "bg-black text-white px-4 sm:px-6 lg:px-8 border-b border-white/10 transition-all duration-300 ease-in-out relative z-20",
         isScrolled ? "-translate-y-full opacity-0" : "translate-y-0 opacity-100"
       )}>
-        <div className="mx-auto max-w-7xl flex justify-between items-center text-[11px] font-semibold tracking-wider h-10">
+        <div className="mx-auto max-w-7xl flex justify-between items-center text-[10px] md:text-[11px] font-semibold tracking-wider h-10">
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-2">
               <Users size={14} className="text-[#facc15]" />
-              Join our Community Today!
+              <span className="hidden sm:inline">Join our Community Today!</span>
             </span>
           </div>
           
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 md:gap-4">
             {/* Language Selection Dropdown */}
             <div className="relative group">
-              <button className="flex items-center gap-1.5 hover:text-[#facc15] transition-colors py-1">
-                <Globe size={14} className="text-[#facc15]" />
-                <span>English</span>
+              <button className="flex items-center gap-1 md:gap-1.5 hover:text-[#facc15] transition-colors py-1">
+                <Globe size={13} className="text-[#facc15]" />
+                <span className="hidden xs:inline">English</span>
+                <span className="xs:hidden uppercase">En</span>
                 <ChevronDown size={10} className="transition-transform group-hover:rotate-180" />
               </button>
-              <div className="absolute right-0 top-full mt-1 w-32 bg-[#001f3f] border border-white/10 shadow-2xl opacity-0 translate-y-2 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-200 z-[100]">
+              <div className="absolute right-0 top-full mt-0 w-32 bg-[#001f3f] border border-white/10 shadow-2xl opacity-0 translate-y-2 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-200 z-[100]">
                 <div className="py-2">
                   {['English', 'French', 'Spanish', 'Portuguese'].map((lang) => (
                     <button key={lang} className="block w-full text-left px-4 py-2 hover:bg-white/10 hover:text-[#facc15] transition-colors">
