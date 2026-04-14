@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import Link from 'next/link';
 import { Heart, Check, ShieldCheck, CreditCard, Landmark } from 'lucide-react';
 
 const donationAmounts = [50, 100, 250, 500, 1000, 2500];
