@@ -22,13 +22,14 @@ export function Campaigns() {
       <section className="py-16 md:py-24 bg-[#001f3f] text-white overflow-hidden relative">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-[#facc15]/10 skew-x-12 translate-x-1/2"></div>
         <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10 text-center">
-          <h2 className="text-2xl md:text-5xl font-black mb-6 leading-tight max-w-4xl mx-auto uppercase">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-4 leading-tight max-w-4xl mx-auto text-white">
             Sign Up for these VMC Campaigns and Earn Verified Volunteer Hours
           </h2>
-          <p className="text-[#facc15] text-lg md:text-2xl font-bold mb-10 tracking-wide uppercase">
+          <div className="h-1 w-20 bg-[#facc15] mx-auto mb-8"></div>
+          <p className="text-[#facc15] text-lg md:text-xl font-semibold mb-10 tracking-widest uppercase">
             Over 60 million volunteering hours recorded and still counting
           </p>
-          <Button asChild size="lg" className="bg-[#facc15] hover:bg-[#e5b800] text-[#001f3f] rounded-none px-10 md:px-12 py-6 md:py-8 text-sm md:text-lg font-black uppercase tracking-widest shadow-2xl transition-transform active:scale-95 w-full md:w-auto">
+          <Button asChild size="lg" className="bg-[#facc15] hover:bg-[#e5b800] text-[#001f3f] rounded-none px-10 md:px-12 py-6 md:py-8 text-sm md:text-lg font-semibold tracking-widest uppercase shadow-lg transition-transform active:scale-95 w-full md:w-auto">
             <Link href="/register">Start Today!</Link>
           </Button>
         </div>
@@ -38,11 +39,11 @@ export function Campaigns() {
       <SectionWrapper className="bg-gray-50">
         <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-12 md:mb-16 gap-6 text-center md:text-left">
           <div>
-            <h2 className="text-xs md:text-sm font-bold text-[#facc15] uppercase tracking-widest mb-2">Our Missions</h2>
-            <h3 className="text-3xl md:text-5xl font-black text-[#001f3f] uppercase">Active Campaigns</h3>
-            <div className="h-1.5 w-24 bg-[#facc15] mt-4 mx-auto md:mx-0"></div>
+            <div className="text-xs md:text-sm font-semibold text-[#facc15] tracking-widest mb-2 uppercase">Our Missions</div>
+            <h2 className="text-2xl md:text-3xl font-semibold text-[#001f3f] mb-4">Active Campaigns</h2>
+            <div className="h-1 w-20 bg-[#facc15] mb-8 mx-auto md:mx-0"></div>
           </div>
-          <Link href="/campaigns" className="text-[#001f3f] font-bold uppercase tracking-widest hover:text-[#facc15] transition-colors text-xs md:text-sm border-b-2 border-[#facc15] pb-1">
+          <Link href="/campaigns" className="text-[#001f3f] font-semibold tracking-widest hover:text-[#facc15] transition-colors text-xs md:text-sm border-b-2 border-[#facc15] pb-1">
             View All Campaigns →
           </Link>
         </div>
@@ -56,27 +57,27 @@ export function Campaigns() {
       {/* Good Deeds Campaigns */}
       <SectionWrapper className="bg-white">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-xs md:text-sm font-bold text-[#facc15] uppercase tracking-widest mb-2">Community Impact</h2>
-          <h3 className="text-3xl md:text-5xl font-black text-[#001f3f] mb-4 uppercase">Good Deeds Campaigns</h3>
-          <div className="h-1.5 w-24 bg-[#facc15] mx-auto mb-6"></div>
-          <p className="text-gray-500 font-bold uppercase tracking-widest text-[10px] md:text-sm max-w-2xl mx-auto leading-relaxed px-4">
+          <div className="text-xs md:text-sm font-semibold text-[#facc15] tracking-widest mb-2 uppercase">Community Impact</div>
+          <h2 className="text-2xl md:text-3xl font-semibold text-[#001f3f] mb-4">Good Deeds Campaigns</h2>
+          <div className="h-1 w-20 bg-[#facc15] mx-auto mb-8"></div>
+          <p className="text-gray-500 font-semibold tracking-widest text-[10px] md:text-sm max-w-2xl mx-auto leading-relaxed px-4 uppercase">
             Join thousands of volunteers making a difference in their local communities through these impactful initiatives.
           </p>
         </div>
         
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {goodDeeds.map((campaign, index) => (
-            <div key={index} className="group relative overflow-hidden bg-gray-900 aspect-[4/5] shadow-xl">
+            <div key={index} className="group relative overflow-hidden bg-gray-900 aspect-[4/5] shadow-lg">
               <Image 
                 src={campaign.image} 
                 alt={campaign.title} 
                 fill 
                 className="object-cover transition-transform duration-500 group-hover:scale-110 opacity-60" 
-              />
+               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#001f3f] via-transparent to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-6 md:p-8 w-full">
-                <h3 className="text-white text-xl md:text-2xl font-black mb-6 leading-tight uppercase">{campaign.title}</h3>
-                <Button asChild className="w-full bg-[#facc15] hover:bg-[#e5b800] text-[#001f3f] rounded-none font-bold uppercase tracking-widest py-6 md:py-8 shadow-xl text-xs md:text-sm">
+                <h3 className="text-xl md:text-2xl font-semibold text-white mb-6 leading-tight">{campaign.title}</h3>
+                <Button asChild className="w-full bg-[#facc15] hover:bg-[#e5b800] text-[#001f3f] rounded-none font-semibold tracking-widest uppercase py-6 md:py-8 shadow-lg text-xs md:text-sm">
                   <Link href="/campaigns">View Campaign</Link>
                 </Button>
               </div>

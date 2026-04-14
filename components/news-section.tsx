@@ -35,35 +35,35 @@ export function NewsSection() {
     <SectionWrapper className="bg-gray-50">
       <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-12 md:mb-16 gap-6 text-center md:text-left">
         <div>
-          <h2 className="text-xs md:text-sm font-bold text-[#facc15] uppercase tracking-widest mb-2">Latest</h2>
-          <h3 className="text-3xl md:text-5xl font-black text-[#001f3f] mb-4 uppercase leading-tight">News & Updates</h3>
-          <div className="h-1 w-20 bg-[#facc15] mt-4 mx-auto md:mx-0"></div>
+          <h2 className="text-xs md:text-sm font-semibold text-[#facc15]  tracking-widest mb-2 uppercase">Latest</h2>
+          <h3 className="text-2xl md:text-3xl font-semibold text-[#001f3f] mb-4  leading-tight">News & Updates</h3>
+          <div className="h-1 w-20 bg-[#facc15] mb-8 mx-auto md:mx-0"></div>
         </div>
-        <Link href="/blog" className="text-[#001f3f] font-bold uppercase tracking-widest hover:text-[#facc15] transition-colors text-xs md:text-sm flex items-center gap-2 border-b-2 border-[#facc15] pb-1">
+        <Link href="/blog" className="text-[#001f3f] font-semibold  tracking-widest hover:text-[#facc15] transition-colors text-xs md:text-sm flex items-center gap-2 border-b-2 border-[#facc15] pb-1">
           View All News <ArrowRight size={16} />
         </Link>
       </div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {newsArticles.map((article) => (
-          <div key={article.id} className="bg-white group cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-300 border-b-4 border-transparent hover:border-[#facc15] flex flex-col h-full">
+          <div key={article.id} className="bg-white group cursor-pointer shadow-md hover:shadow-lg transition-colors transition-transform transition-shadow duration-300 border-b-4 border-transparent hover:border-[#facc15] flex flex-col h-full">
             <div className="relative aspect-video overflow-hidden">
               <Image 
                 src={article.image} 
                 alt={article.title} 
                 fill 
                 className="object-cover transition-transform duration-500 group-hover:scale-110" 
-              />
-              <div className="absolute top-4 left-4 bg-[#facc15] text-[#001f3f] text-[9px] md:text-[10px] font-black px-3 py-1 uppercase tracking-widest shadow-lg">
+               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+              <div className="absolute top-4 left-4 bg-[#facc15] text-[#001f3f] text-[9px] md:text-[10px] font-semibold px-3 py-1  tracking-widest shadow-lg">
                 {article.category}
               </div>
             </div>
             <div className="p-6 md:p-8 flex-1 flex flex-col">
-              <div className="text-gray-400 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-3">{article.date}</div>
-              <h3 className="text-lg md:text-xl font-black text-[#001f3f] mb-6 leading-tight group-hover:text-[#facc15] transition-colors uppercase flex-1">
+              <div className="text-gray-400 text-[10px] md:text-xs font-semibold  tracking-widest mb-3">{article.date}</div>
+              <h3 className="text-base md:text-base font-semibold text-[#001f3f] mb-6 leading-tight group-hover:text-[#facc15] transition-colors  flex-1">
                 {article.title}
               </h3>
-              <div className="flex items-center gap-2 text-[#001f3f] font-black text-[10px] md:text-xs uppercase tracking-widest group-hover:translate-x-2 transition-transform">
+              <div className="flex items-center gap-2 text-[#001f3f] font-semibold text-[10px] md:text-xs  tracking-widest group-hover:translate-x-2 transition-transform">
                 Read More <ArrowRight size={14} className="text-[#facc15]" />
               </div>
             </div>

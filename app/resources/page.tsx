@@ -8,7 +8,7 @@ export default function ResourcesPage() {
     <PageLayout>
       <SectionWrapper>
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-black text-[#001f3f] mb-4">RESOURCES</h1>
+          <h1 className="text-3xl md:text-4xl font-semibold text-[#001f3f] mb-4">Resources</h1>
           <div className="h-1 w-20 bg-[#facc15] mx-auto mb-6"></div>
           <p className="text-gray-500 max-w-2xl mx-auto">Downloadable materials, guides, and medical protocols for our volunteers and partners.</p>
         </div>

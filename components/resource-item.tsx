@@ -15,11 +15,11 @@ export function ResourceItem({ title, description, type, link }: ResourceProps) 
         <FileText size={24} />
       </div>
       <div className="flex-1">
-        <h4 className="text-lg font-black text-[#001f3f] mb-1">{title}</h4>
+        <h4 className="text-base font-semibold text-[#001f3f] mb-1">{title}</h4>
         <p className="text-sm text-gray-500">{description}</p>
       </div>
       <div className="flex flex-col items-end gap-2 shrink-0">
-        <span className="text-[10px] font-bold bg-[#facc15] text-[#001f3f] px-2 py-1 uppercase tracking-widest">{type}</span>
+        <span className="text-[10px] font-semibold bg-[#facc15] text-[#001f3f] px-2 py-1  tracking-widest">{type}</span>
         <a href={link} className="p-2 text-gray-400 hover:text-[#001f3f] transition-colors" title="Download">
           <Download size={20} />
         </a>

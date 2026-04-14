@@ -13,14 +13,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   return (
     <PageLayout>
       <div className="relative h-[50vh] min-h-[400px] w-full">
-        <Image src={post.image} alt={post.title} fill className="object-cover" />
+        <Image src={post.image} alt={post.title} fill className="object-cover"  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
         <div className="absolute inset-0 bg-black/60 flex items-center">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 w-full text-center text-white">
-            <div className="flex justify-center items-center gap-6 text-sm font-bold text-[#facc15] uppercase tracking-widest mb-6">
+            <div className="flex justify-center items-center gap-6 text-xs md:text-sm font-semibold text-[#facc15] uppercase tracking-widest mb-6">
               <span className="flex items-center gap-2"><Calendar size={16} /> {post.date}</span>
               <span className="flex items-center gap-2"><User size={16} /> {post.author}</span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-black mb-6 leading-tight">{post.title}</h1>
+            <h1 className="text-3xl md:text-5xl font-semibold mb-6 leading-tight">{post.title}</h1>
           </div>
         </div>
       </div>

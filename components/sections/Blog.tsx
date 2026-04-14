@@ -9,10 +9,10 @@ export function Blog() {
     <SectionWrapper className="bg-gray-50">
       <div className="flex justify-between items-end mb-12">
         <div>
-          <h2 className="text-3xl font-black text-[#001f3f] mb-4">LATEST NEWS</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold text-[#001f3f] mb-4">Latest News</h2>
           <div className="h-1 w-20 bg-[#facc15]"></div>
         </div>
-        <Link href="/blog" className="text-[#001f3f] font-bold uppercase tracking-widest hover:text-[#facc15] transition-colors text-sm">
+        <Link href="/blog" className="text-[#001f3f] font-semibold  tracking-widest hover:text-[#facc15] transition-colors text-sm">
           View All →
         </Link>
       </div>

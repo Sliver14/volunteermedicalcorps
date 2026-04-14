@@ -18,26 +18,26 @@ export function Footer() {
             <Link href="/" className="inline-block mb-8">
               <Image src="/logo.png" alt="Logo" width={180} height={40} className="h-10 w-auto object-contain brightness-0 invert" />
             </Link>
-            <p className="text-lg leading-relaxed text-gray-300 mb-8 max-w-md mx-auto lg:mx-0">
+            <p className="text-base leading-relaxed text-gray-300 mb-8 max-w-md mx-auto lg:mx-0">
               The Volunteer Medical Corps is a global network of healthcare professionals committed to providing medical relief and support across communities, cultures, and countries.
             </p>
 
             <div>
-              <p className="text-[#facc15] font-bold uppercase tracking-widest mb-4 text-sm">CONNECT WITH US:</p>
+              <p className="text-[#facc15] font-semibold  tracking-widest mb-4 text-sm">CONNECT WITH US:</p>
               <div className="flex justify-center lg:justify-start gap-3">
-                <a href="#" className="w-10 h-10 bg-white/10 hover:bg-[#facc15] hover:text-black rounded flex items-center justify-center transition-all">
+                <a href="#" className="w-10 h-10 bg-white/10 hover:bg-[#facc15] hover:text-black rounded flex items-center justify-center transition-colors transition-transform transition-shadow">
                   <Facebook className="w-5 h-5" />
                 </a>
-                <a href="#" className="w-10 h-10 bg-white/10 hover:bg-black rounded flex items-center justify-center transition-all">
+                <a href="#" className="w-10 h-10 bg-white/10 hover:bg-black rounded flex items-center justify-center transition-colors transition-transform transition-shadow">
                   <Twitter className="w-5 h-5" />
                 </a>
-                <a href="#" className="w-10 h-10 bg-white/10 hover:bg-red-600 rounded flex items-center justify-center transition-all">
+                <a href="#" className="w-10 h-10 bg-white/10 hover:bg-red-600 rounded flex items-center justify-center transition-colors transition-transform transition-shadow">
                   <Youtube className="w-5 h-5" />
                 </a>
-                <a href="#" className="w-10 h-10 bg-white/10 hover:bg-pink-600 rounded flex items-center justify-center transition-all">
+                <a href="#" className="w-10 h-10 bg-white/10 hover:bg-pink-600 rounded flex items-center justify-center transition-colors transition-transform transition-shadow">
                   <Instagram className="w-5 h-5" />
                 </a>
-                <a href="#" className="w-10 h-10 bg-white/10 hover:bg-[#0a66c2] rounded flex items-center justify-center transition-all">
+                <a href="#" className="w-10 h-10 bg-white/10 hover:bg-[#0a66c2] rounded flex items-center justify-center transition-colors transition-transform transition-shadow">
                   <Linkedin className="w-5 h-5" />
                 </a>
               </div>
@@ -46,7 +46,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div className="lg:col-span-3">
-            <h3 className="text-[#facc15] text-2xl font-bold mb-6">Quick Links</h3>
+            <h3 className="text-[#facc15] text-base font-semibold mb-6">Quick Links</h3>
             <ul className="space-y-4">
               {[
                 { name: 'Give Now', href: '/donate' },
@@ -70,7 +70,7 @@ export function Footer() {
 
           {/* Newsletter */}
           <div className="lg:col-span-4">
-            <h3 className="text-[#facc15] text-2xl font-bold mb-6">Join The Newsletter</h3>
+            <h3 className="text-[#facc15] text-base font-semibold mb-6">Join The Newsletter</h3>
             
             <div className="space-y-4">
               <input 
@@ -79,7 +79,7 @@ export function Footer() {
                 className="w-full bg-white text-gray-900 px-6 py-4 rounded placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#facc15]"
               />
               
-              <button className="w-full bg-[#facc15] hover:bg-[#e5b800] text-black font-bold py-4 rounded transition-colors uppercase tracking-wider text-sm">
+              <button className="w-full bg-[#facc15] hover:bg-[#e5b800] text-black font-semibold py-4 rounded transition-colors  tracking-wider text-sm uppercase">
                 SUBSCRIBE NOW
               </button>
             </div>

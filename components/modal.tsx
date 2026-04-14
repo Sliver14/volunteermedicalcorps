@@ -14,10 +14,10 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-4">
-      <div className="bg-white w-full max-w-lg shadow-xl relative animate-in fade-in zoom-in duration-200">
+      <div className="bg-white w-full max-w-lg shadow-lg relative animate-in fade-in zoom-in duration-200">
         <div className="flex items-center justify-between p-6 border-b border-gray-100">
-          <h2 className="text-xl font-black text-[#001f3f]">{title}</h2>
-          <button onClick={onClose} className="text-gray-400 hover:text-[#001f3f] transition-colors">
+          <h2 className="text-base font-semibold text-[#001f3f]">{title}</h2>
+          <button onClick={onClose} className="text-gray-400 hover:text-[#001f3f] transition-colors uppercase">
             <X size={24} />
           </button>
         </div>

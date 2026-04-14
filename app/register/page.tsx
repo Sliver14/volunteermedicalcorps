@@ -33,12 +33,12 @@ export default function RegisterPage() {
             alt="Registration Background" 
             fill 
             className="object-cover"
-          />
+           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
         </div>
         <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10 text-center">
-          <h1 className="text-3xl md:text-6xl font-black mb-6 uppercase tracking-tight leading-tight">Become a VMC Volunteer</h1>
-          <div className="h-2 w-24 bg-[#facc15] mx-auto mb-8"></div>
-          <p className="text-lg md:text-xl text-[#facc15] font-bold uppercase tracking-widest max-w-3xl mx-auto">
+          <h1 className="text-3xl md:text-5xl font-semibold mb-6 leading-tight">Become A VMC Volunteer</h1>
+          <div className="h-1 w-20 bg-[#facc15] mx-auto mb-8"></div>
+          <p className="text-xs md:text-sm text-[#facc15] font-semibold uppercase tracking-widest max-w-3xl mx-auto">
             Join the fastest growing Christian medical outreach in the world.
           </p>
         </div>
@@ -48,14 +48,14 @@ export default function RegisterPage() {
         <div className="grid lg:grid-cols-3 gap-8 md:gap-12">
           {/* Info Sidebar */}
           <div className="lg:col-span-1 space-y-6 md:space-y-8 order-2 lg:order-1">
-            <div className="bg-[#001f3f] text-white p-6 md:p-8 shadow-2xl border-b-8 border-[#facc15]">
-              <h3 className="text-xl md:text-2xl font-black mb-6 uppercase">Why Join VMC?</h3>
+            <div className="bg-[#001f3f] text-white p-6 md:p-8 shadow-lg border-b-8 border-[#facc15]">
+              <h3 className="text-xl md:text-2xl font-semibold mb-6">Why Join VMC?</h3>
               <div className="space-y-6">
                 {benefits.map((b, i) => (
                   <div key={i} className="flex gap-4">
                     <div className="shrink-0 mt-1">{b.icon}</div>
                     <div>
-                      <h4 className="font-bold text-[#facc15] uppercase text-xs md:text-sm mb-1">{b.title}</h4>
+                      <h4 className="text-lg md:text-xl font-semibold text-[#facc15] mb-1">{b.title}</h4>
                       <p className="text-white/70 text-xs md:text-sm leading-relaxed">{b.desc}</p>
                     </div>
                   </div>
@@ -63,42 +63,43 @@ export default function RegisterPage() {
               </div>
             </div>
             
-            <div className="bg-white p-6 md:p-8 shadow-xl border border-gray-100">
-              <h4 className="font-black text-[#001f3f] uppercase mb-4 text-sm md:text-base">Registration Support</h4>
+            <div className="bg-white p-6 md:p-8 shadow-lg border border-gray-100">
+              <h4 className="text-lg md:text-xl font-semibold text-[#001f3f] mb-4">Registration Support</h4>
               <p className="text-gray-500 text-xs md:text-sm mb-4">Need help with your application? Contact our registration team.</p>
-              <div className="text-[#001f3f] font-bold text-xs md:text-sm break-all">support@volunteermedicalcorps.org</div>
+              <div className="text-[#001f3f] font-semibold text-xs md:text-sm break-all">support@volunteermedicalcorps.org</div>
             </div>
           </div>
 
           {/* Form Area */}
           <div className="lg:col-span-2 order-1 lg:order-2">
-            <div className="bg-white p-6 md:p-12 shadow-2xl border-t-8 border-[#001f3f]">
+            <div className="bg-white p-6 md:p-12 shadow-lg border-t-8 border-[#001f3f]">
               <div className="mb-8 md:mb-10">
-                <h2 className="text-2xl md:text-3xl font-black text-[#001f3f] uppercase mb-2">Volunteer Application</h2>
-                <p className="text-gray-400 font-bold uppercase tracking-widest text-[10px] md:text-xs">Please provide accurate information for verification</p>
+                <p className="text-xs md:text-sm font-semibold text-[#facc15] tracking-widest mb-2 uppercase">Please provide accurate information for verification</p>
+                <h2 className="text-2xl md:text-3xl font-semibold text-[#001f3f] mb-4">Volunteer Application</h2>
+                <div className="h-1 w-20 bg-[#facc15] mb-8"></div>
               </div>
               
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 md:space-y-8">
                 {/* Personal Information */}
                 <div className="space-y-4 md:space-y-6">
-                  <h3 className="text-base md:text-lg font-black text-[#001f3f] uppercase border-b border-gray-100 pb-2">Personal Information</h3>
+                  <h3 className="text-xl md:text-2xl font-semibold text-[#001f3f] border-b border-gray-100 pb-2">Personal Information</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     <div className="space-y-2">
-                      <label className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-widest">First Name</label>
+                      <label className="text-[10px] md:text-xs font-semibold text-gray-400 uppercase tracking-widest">First Name</label>
                       <Input {...register('firstName')} required className="rounded-none border-gray-200 focus-visible:ring-[#facc15] py-5 md:py-6" />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-widest">Last Name</label>
+                      <label className="text-[10px] md:text-xs font-semibold text-gray-400 uppercase tracking-widest">Last Name</label>
                       <Input {...register('lastName')} required className="rounded-none border-gray-200 focus-visible:ring-[#facc15] py-5 md:py-6" />
                     </div>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     <div className="space-y-2">
-                      <label className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-widest">Email Address</label>
+                      <label className="text-[10px] md:text-xs font-semibold text-gray-400 uppercase tracking-widest">Email Address</label>
                       <Input type="email" {...register('email')} required className="rounded-none border-gray-200 focus-visible:ring-[#facc15] py-5 md:py-6" />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-widest">Phone Number</label>
+                      <label className="text-[10px] md:text-xs font-semibold text-gray-400 uppercase tracking-widest">Phone Number</label>
                       <Input type="tel" {...register('phone')} required className="rounded-none border-gray-200 focus-visible:ring-[#facc15] py-5 md:py-6" />
                     </div>
                   </div>
@@ -106,10 +107,10 @@ export default function RegisterPage() {
 
                 {/* Professional Details */}
                 <div className="space-y-4 md:space-y-6">
-                  <h3 className="text-base md:text-lg font-black text-[#001f3f] uppercase border-b border-gray-100 pb-2">Professional Details</h3>
+                  <h3 className="text-xl md:text-2xl font-semibold text-[#001f3f] border-b border-gray-100 pb-2">Professional Details</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     <div className="space-y-2">
-                      <label className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-widest">Profession Type</label>
+                      <label className="text-[10px] md:text-xs font-semibold text-gray-400 uppercase tracking-widest">Profession Type</label>
                       <Select onValueChange={(v) => setValue('profession', v)}>
                         <SelectTrigger className="rounded-none border-gray-200 h-[45px] md:h-[50px] focus:ring-[#facc15]">
                           <SelectValue placeholder="Select Profession" />
@@ -124,7 +125,7 @@ export default function RegisterPage() {
                       </Select>
                     </div>
                     <div className="space-y-2">
-                      <label className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-widest">Specialization</label>
+                      <label className="text-[10px] md:text-xs font-semibold text-gray-400 uppercase tracking-widest">Specialization</label>
                       <Input {...register('specialty')} placeholder="e.g. Surgery, Pediatrics, etc." className="rounded-none border-gray-200 focus-visible:ring-[#facc15] py-5 md:py-6" />
                     </div>
                   </div>
@@ -132,9 +133,9 @@ export default function RegisterPage() {
 
                 {/* Additional Information */}
                 <div className="space-y-4 md:space-y-6">
-                  <h3 className="text-base md:text-lg font-black text-[#001f3f] uppercase border-b border-gray-100 pb-2">Experience & Motivation</h3>
+                  <h3 className="text-xl md:text-2xl font-semibold text-[#001f3f] border-b border-gray-100 pb-2">Experience & Motivation</h3>
                   <div className="space-y-2">
-                    <label className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-widest">Why do you want to join the VMC?</label>
+                    <label className="text-[10px] md:text-xs font-semibold text-gray-400 uppercase tracking-widest">Why do you want to join the VMC?</label>
                     <Textarea 
                       {...register('motivation')} 
                       className="rounded-none border-gray-200 min-h-[120px] md:min-h-[150px] focus-visible:ring-[#facc15] p-4 text-sm" 
@@ -148,7 +149,7 @@ export default function RegisterPage() {
                   <p className="text-xs md:text-sm text-[#001f3f] font-medium">By submitting, you agree to uphold the core values of the Volunteer Medical Corps.</p>
                 </div>
 
-                <Button type="submit" className="w-full bg-[#001f3f] hover:bg-[#002855] text-white rounded-none py-6 md:py-8 font-black uppercase tracking-widest text-sm md:text-lg shadow-xl active:scale-95 transition-all">
+                <Button type="submit" className="w-full bg-[#001f3f] hover:bg-[#002855] text-white rounded-none py-6 md:py-8 font-semibold uppercase tracking-widest text-sm md:text-base shadow-lg active:scale-95 transition-colors transition-transform transition-shadow">
                   Submit VMC Application
                 </Button>
               </form>

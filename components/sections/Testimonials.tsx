@@ -1,53 +1,58 @@
+'use client';
+
 import React from 'react';
 import { SectionWrapper } from '@/components/section-wrapper';
+import Image from 'next/image';
 
 export function Testimonials() {
   const testimonials = [
     {
       name: 'Jeanne Louise Ridge',
       location: 'Cape Town, South Africa',
-      role: 'Volunteer',
-      text: 'I enjoy working with people and spreading the love of Jesus Christ, and this is one of the reasons why I chose to join the VMC.',
+      content: 'The VMC medical mission to our community was a life-saving event. We received care that we could never have afforded.',
+      role: 'Community Member',
       image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1974&auto=format&fit=crop'
     },
     {
-      name: 'Jerilee Pinheiro',
-      location: 'Bangalore, India',
-      role: 'HR professional',
-      text: 'Our President Pastor Chris said we must find human needs and meet them. VMC is a platform where we can do just that. Whenever I go to an orphanage or an old age home, and then they see the love of Jesus in my eyes that experience is very rewarding and encouraging.',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop'
+      name: 'Dr. Samuel Okafor',
+      location: 'Lagos, Nigeria',
+      content: 'Being part of the VMC allows me to practice medicine with a higher purpose. The impact we make globally is truly inspiring.',
+      role: 'VMC Doctor',
+      image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=2070&auto=format&fit=crop'
     },
     {
-      name: 'Patricia Pokhabela',
-      location: 'Pietermaritzburg, South Africa',
-      role: 'Radiographer',
-      text: "I joined the VMC in 2019. I've always had a heart for community service work but I didn't know how or where to start. VMC gave me the platform to make an impact in my community and beyond.",
-      image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=2070&auto=format&fit=crop'
+      name: 'Maria Gonzalez',
+      location: 'Puebla, Mexico',
+      content: 'The training programs provided by VMC Academy have empowered our local youth to become health pioneers in our village.',
+      role: 'Health Volunteer',
+      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop'
     }
   ];
 
   return (
     <SectionWrapper className="bg-gray-50">
       <div className="text-center mb-12 md:mb-16">
-        <h2 className="text-xs md:text-sm font-bold text-[#facc15] uppercase tracking-widest mb-2">Testimonials</h2>
-        <h3 className="text-3xl md:text-5xl font-black text-[#001f3f] mb-4 uppercase leading-tight">Voices of Impact</h3>
-        <div className="h-1.5 w-24 bg-[#facc15] mx-auto mb-6"></div>
+        <div className="text-xs md:text-sm font-semibold text-[#facc15] tracking-widest mb-2 uppercase">Testimonials</div>
+        <h2 className="text-2xl md:text-3xl font-semibold text-[#001f3f] mb-4">Voices of Impact</h2>
+        <div className="h-1 w-20 bg-[#facc15] mx-auto mb-8"></div>
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+
+      <div className="grid md:grid-cols-3 gap-8">
         {testimonials.map((t, index) => (
-          <div key={index} className="bg-white p-6 md:p-10 shadow-xl relative border-t-4 border-[#facc15] flex flex-col h-full">
-            <div className="text-[#facc15] text-6xl md:text-8xl font-serif absolute -top-2 md:-top-4 left-4 opacity-10">"</div>
-            <p className="text-gray-600 mb-8 relative z-10 italic leading-relaxed text-base md:text-lg flex-1">"{t.text}"</p>
-            <div className="flex items-center gap-4 border-t border-gray-100 pt-6 mt-auto">
-              <div className="w-12 h-12 md:w-14 md:h-14 bg-gray-200 rounded-full overflow-hidden shadow-md shrink-0">
-                <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
+          <div key={index} className="bg-white p-8 shadow-lg relative group border-b-4 border-transparent hover:border-[#facc15] transition-colors duration-300">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-gray-100">
+                <Image src={t.image} alt={t.name} fill className="object-cover" />
               </div>
               <div>
-                <h4 className="font-black text-[#001f3f] text-xs md:text-sm uppercase">{t.name}</h4>
-                <div className="text-[9px] md:text-[11px] text-[#facc15] font-bold uppercase tracking-widest">{t.location}</div>
-                <div className="text-[8px] md:text-[10px] text-gray-400 font-medium uppercase tracking-tighter mt-1">{t.role}</div>
+                <div className="text-[#001f3f] font-semibold text-sm">{t.name}</div>
+                <div className="text-gray-400 text-[10px] font-medium uppercase tracking-tighter">{t.location}</div>
               </div>
             </div>
+            <p className="text-gray-600 text-sm italic leading-relaxed relative z-10">
+              "{t.content}"
+            </p>
+            <div className="absolute top-8 right-8 text-gray-100 text-6xl font-serif pointer-events-none group-hover:text-[#facc15]/10 transition-colors">"</div>
           </div>
         ))}
       </div>

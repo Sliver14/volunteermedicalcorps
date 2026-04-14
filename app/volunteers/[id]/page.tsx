@@ -15,10 +15,10 @@ export default async function VolunteerProfilePage({ params }: { params: Promise
         <div className="grid md:grid-cols-3 gap-12">
           <div className="md:col-span-1">
             <div className="relative aspect-square mb-6">
-              <Image src={volunteer.image} alt={volunteer.name} fill className="object-cover" />
+              <Image src={volunteer.image} alt={volunteer.name} fill className="object-cover"  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
             </div>
             <div className="bg-gray-50 p-6 border border-gray-100">
-              <h3 className="font-bold text-[#001f3f] mb-4 border-b pb-2">Information</h3>
+              <h3 className="font-semibold text-[#001f3f] mb-4 border-b pb-2">Information</h3>
               <ul className="space-y-3 text-sm text-gray-600">
                 <li><strong className="text-[#001f3f]">Role:</strong> {volunteer.role}</li>
                 <li><strong className="text-[#001f3f]">Specialty:</strong> {volunteer.specialty}</li>
@@ -29,10 +29,10 @@ export default async function VolunteerProfilePage({ params }: { params: Promise
             </div>
           </div>
           <div className="md:col-span-2">
-            <h1 className="text-4xl font-black text-[#001f3f] mb-2">{volunteer.name}</h1>
-            <p className="text-[#facc15] font-bold uppercase tracking-widest mb-8">{volunteer.role}</p>
+            <h1 className="text-4xl font-semibold text-[#001f3f] mb-2">{volunteer.name}</h1>
+            <p className="text-[#facc15] font-semibold uppercase tracking-widest mb-8">{volunteer.role}</p>
             <div className="prose max-w-none text-gray-600">
-              <h2 className="text-2xl font-bold text-[#001f3f] mb-4">Biography</h2>
+              <h2 className="text-2xl font-semibold text-[#001f3f] mb-4">Biography</h2>
               <p>{volunteer.bio}</p>
             </div>
           </div>

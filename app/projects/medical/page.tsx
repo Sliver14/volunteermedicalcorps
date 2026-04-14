@@ -38,13 +38,14 @@ export default function MedicalProjectsPage() {
             alt="Medical Projects Hero" 
             fill 
             className="object-cover"
-          />
+           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
         </div>
         <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
-          <h1 className="text-3xl md:text-7xl font-black mb-6 md:mb-8 uppercase tracking-tighter leading-tight">
+          <h1 className="text-3xl md:text-5xl font-semibold mb-6">
             Medical <span className="text-[#facc15]">Projects</span>
           </h1>
-          <p className="text-lg md:text-xl text-white/80 mb-8 md:mb-10 leading-relaxed font-medium max-w-2xl mx-auto md:mx-0">
+          <div className="h-1 w-20 bg-[#facc15] mb-8"></div>
+          <p className="text-base md:text-base text-white/80 mb-8 md:mb-10 leading-relaxed font-medium max-w-2xl mx-auto md:mx-0">
             Providing expert medical care and sustainable health solutions where they are needed most.
           </p>
         </div>
@@ -54,19 +55,20 @@ export default function MedicalProjectsPage() {
       <SectionWrapper className="bg-gray-50">
         <div className="grid lg:grid-cols-1 gap-12 md:gap-16">
           {projects.map((project, i) => (
-            <div key={i} className={`flex flex-col lg:flex-row items-center gap-8 md:gap-12 bg-white shadow-2xl overflow-hidden border-l-8 border-[#facc15] ${i % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+            <div key={i} className={`flex flex-col lg:flex-row items-center gap-8 md:gap-12 bg-white shadow-lg overflow-hidden border-l-8 border-[#facc15] ${i % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
               <div className="w-full lg:w-1/2 aspect-video relative">
-                <Image src={project.image} alt={project.title} fill className="object-cover" />
+                <Image src={project.image} alt={project.title} fill className="object-cover"  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
               </div>
               <div className="w-full lg:w-1/2 p-8 md:p-12">
                 <div className="mb-4 md:mb-6">{project.icon}</div>
-                <h2 className="text-2xl md:text-3xl font-black text-[#001f3f] uppercase mb-4 md:mb-6 leading-tight">{project.title}</h2>
-                <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-8">{project.desc}</p>
+                <h2 className="text-2xl md:text-3xl font-semibold text-[#001f3f] mb-4">{project.title}</h2>
+                <div className="h-1 w-20 bg-[#facc15] mb-8"></div>
+                <p className="text-base md:text-base text-gray-600 leading-relaxed mb-8">{project.desc}</p>
                 <div className="flex flex-wrap gap-4">
-                  <Button asChild className="bg-[#001f3f] hover:bg-[#002855] text-white rounded-none px-6 md:px-8 py-5 md:py-6 font-black uppercase tracking-widest text-[10px] md:text-xs w-full sm:w-auto">
-                    <Link href="/register">Volunteer for this project</Link>
+                  <Button asChild className="bg-[#001f3f] hover:bg-[#002855] text-white rounded-none px-6 md:px-8 py-5 md:py-6 font-semibold tracking-widest uppercase text-[10px] md:text-xs w-full sm:w-auto">
+                    <Link href="/register">Volunteer For This Project</Link>
                   </Button>
-                  <Button asChild variant="outline" className="border-2 border-[#001f3f] text-[#001f3f] hover:bg-[#001f3f] hover:text-white rounded-none px-6 md:px-8 py-5 md:py-6 font-black uppercase tracking-widest text-[10px] md:text-xs w-full sm:w-auto">
+                  <Button asChild variant="outline" className="border-2 border-[#001f3f] text-[#001f3f] hover:bg-[#001f3f] hover:text-white rounded-none px-6 md:px-8 py-5 md:py-6 font-semibold tracking-widest uppercase text-[10px] md:text-xs w-full sm:w-auto">
                     <Link href="/donate">Sponsor Project</Link>
                   </Button>
                 </div>
@@ -81,16 +83,16 @@ export default function MedicalProjectsPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 text-center">
             <div className="space-y-2">
-              <div className="text-4xl md:text-5xl font-black tracking-tighter">500+</div>
-              <div className="text-[10px] md:text-sm font-bold uppercase tracking-widest opacity-70">Medical Missions</div>
+              <div className="text-3xl md:text-4xl font-semibold tracking-tight">500+</div>
+              <div className="text-xs md:text-sm font-semibold uppercase tracking-widest opacity-70">Medical Missions</div>
             </div>
             <div className="space-y-2">
-              <div className="text-4xl md:text-5xl font-black tracking-tighter">2.5M+</div>
-              <div className="text-[10px] md:text-sm font-bold uppercase tracking-widest opacity-70">Patients Treated</div>
+              <div className="text-3xl md:text-4xl font-semibold tracking-tight">2.5M+</div>
+              <div className="text-xs md:text-sm font-semibold uppercase tracking-widest opacity-70">Patients Treated</div>
             </div>
             <div className="space-y-2">
-              <div className="text-4xl md:text-5xl font-black tracking-tighter">150+</div>
-              <div className="text-[10px] md:text-sm font-bold uppercase tracking-widest opacity-70">Participating Countries</div>
+              <div className="text-3xl md:text-4xl font-semibold tracking-tight">150+</div>
+              <div className="text-xs md:text-sm font-semibold uppercase tracking-widest opacity-70">Participating Countries</div>
             </div>
           </div>
         </div>
@@ -100,12 +102,14 @@ export default function MedicalProjectsPage() {
       <section className="bg-[#001f3f] text-white py-20 md:py-24 relative overflow-hidden text-center">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-[#facc15]/5 skew-x-12 translate-x-1/2"></div>
         <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
-          <h2 className="text-2xl md:text-5xl font-black mb-6 md:mb-8 uppercase leading-tight">Ready to join our medical corps?</h2>
-          <p className="text-base md:text-xl text-white/70 mb-10 md:mb-12 max-w-2xl mx-auto">
+          <p className="text-xs md:text-sm font-semibold text-[#facc15] tracking-widest mb-2 uppercase">Take Action</p>
+          <h2 className="text-2xl md:text-3xl font-semibold mb-4 leading-tight">Ready To Join Our Medical Corps?</h2>
+          <div className="h-1 w-20 bg-[#facc15] mx-auto mb-8"></div>
+          <p className="text-base md:text-base text-white/70 mb-10 md:mb-12 max-w-2xl mx-auto">
             Your expertise can save lives. Join our global network of medical professionals today.
           </p>
-          <Button asChild size="lg" className="bg-[#facc15] hover:bg-white text-[#001f3f] rounded-none px-10 md:px-12 py-6 md:py-8 text-sm md:text-lg font-black uppercase tracking-widest shadow-2xl w-full md:w-auto">
-            <Link href="/register">Become a Volunteer</Link>
+          <Button asChild size="lg" className="bg-[#facc15] hover:bg-white text-[#001f3f] rounded-none px-10 md:px-12 py-6 md:py-8 text-sm md:text-base font-semibold  tracking-widest shadow-lg w-full md:w-auto uppercase">
+            <Link href="/register">Become A Volunteer</Link>
           </Button>
         </div>
       </section>

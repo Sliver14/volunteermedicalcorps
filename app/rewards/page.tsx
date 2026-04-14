@@ -31,17 +31,19 @@ export default function RewardsPage() {
             alt="Rewards Hero" 
             fill 
             className="object-cover"
-          />
+           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
         </div>
         <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl text-center md:text-left">
-            <h1 className="text-3xl md:text-7xl font-black mb-6 uppercase tracking-tighter leading-tight">
+            <p className="text-xs md:text-sm font-semibold text-[#facc15] tracking-widest mb-2 uppercase">Member Perks</p>
+            <h1 className="text-3xl md:text-5xl font-semibold mb-6">
               Earn VMC <span className="text-[#facc15]">Rewards</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 mb-10 leading-relaxed font-medium">
+            <div className="h-1 w-20 bg-[#facc15] mb-8 mx-auto md:mx-0"></div>
+            <p className="text-base md:text-base text-white/80 mb-10 leading-relaxed font-medium">
               Your dedication to service deserves recognition. Track your volunteering hours and unlock exclusive rewards, certificates, and growth opportunities.
             </p>
-            <Button asChild className="bg-[#facc15] hover:bg-white text-[#001f3f] rounded-none px-8 md:px-10 py-6 md:py-8 font-black uppercase tracking-widest text-xs md:text-sm shadow-xl w-full md:w-auto">
+            <Button asChild className="bg-[#facc15] hover:bg-white text-[#001f3f] rounded-none px-8 md:px-10 py-6 md:py-8 font-semibold tracking-widest uppercase text-xs md:text-sm shadow-lg w-full md:w-auto">
               <Link href="/elearn/students/home">Check My Hours</Link>
             </Button>
           </div>
@@ -50,26 +52,31 @@ export default function RewardsPage() {
 
       {/* How it Works */}
       <SectionWrapper className="bg-gray-50">
+        <div className="text-center mb-16">
+          <p className="text-xs md:text-sm font-semibold text-[#facc15] tracking-widest mb-2 uppercase">Process</p>
+          <h2 className="text-2xl md:text-3xl font-semibold text-[#001f3f] mb-4">How It Works</h2>
+          <div className="h-1 w-20 bg-[#facc15] mx-auto mb-8"></div>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-center">
-          <div className="space-y-6 p-6 md:p-8 bg-white shadow-xl">
+          <div className="space-y-6 p-6 md:p-8 bg-white shadow-lg">
              <div className="w-14 h-14 md:w-16 md:h-16 bg-[#001f3f] text-[#facc15] rounded-full flex items-center justify-center mx-auto shadow-lg">
                 <Clock size={28} className="md:w-8 md:h-8" />
              </div>
-             <h3 className="text-lg md:text-xl font-black text-[#001f3f] uppercase">1. Serve</h3>
+             <h3 className="text-xl md:text-2xl font-semibold text-[#001f3f]">1. Serve</h3>
              <p className="text-xs md:text-sm text-gray-500 leading-relaxed">Participate in VMC campaigns, medical missions, and community outreaches globally.</p>
           </div>
-          <div className="space-y-6 p-6 md:p-8 bg-white shadow-xl">
+          <div className="space-y-6 p-6 md:p-8 bg-white shadow-lg">
              <div className="w-14 h-14 md:w-16 md:h-16 bg-[#001f3f] text-[#facc15] rounded-full flex items-center justify-center mx-auto shadow-lg">
                 <ShieldCheck size={28} className="md:w-8 md:h-8" />
              </div>
-             <h3 className="text-lg md:text-xl font-black text-[#001f3f] uppercase">2. Verify</h3>
+             <h3 className="text-xl md:text-2xl font-semibold text-[#001f3f]">2. Verify</h3>
              <p className="text-xs md:text-sm text-gray-500 leading-relaxed">Log your activities and get them verified by our mission leads and automated tracking systems.</p>
           </div>
-          <div className="space-y-6 p-6 md:p-8 bg-white shadow-xl">
+          <div className="space-y-6 p-6 md:p-8 bg-white shadow-lg">
              <div className="w-14 h-14 md:w-16 md:h-16 bg-[#001f3f] text-[#facc15] rounded-full flex items-center justify-center mx-auto shadow-lg">
                 <Trophy size={28} className="md:w-8 md:h-8" />
              </div>
-             <h3 className="text-lg md:text-xl font-black text-[#001f3f] uppercase">3. Redeem</h3>
+             <h3 className="text-xl md:text-2xl font-semibold text-[#001f3f]">3. Redeem</h3>
              <p className="text-xs md:text-sm text-gray-500 leading-relaxed">Unlock milestones and redeem your hours for certificates, gear, and advanced training.</p>
           </div>
         </div>
@@ -78,25 +85,25 @@ export default function RewardsPage() {
       {/* Rewards Tiers */}
       <SectionWrapper>
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-xs md:text-sm font-bold text-[#facc15] uppercase tracking-widest mb-2">Milestones</h2>
-          <h3 className="text-3xl md:text-4xl font-black text-[#001f3f] uppercase">Volunteer Tiers</h3>
-          <div className="h-1.5 w-24 bg-[#facc15] mx-auto mt-4"></div>
+          <p className="text-xs md:text-sm font-semibold text-[#facc15] tracking-widest mb-2 uppercase">Milestones</p>
+          <h2 className="text-2xl md:text-3xl font-semibold text-[#001f3f] mb-4">Volunteer Tiers</h2>
+          <div className="h-1 w-20 bg-[#facc15] mx-auto mb-8"></div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {tiers.map((tier, i) => (
-            <div key={i} className="bg-white border-t-8 border-[#001f3f] shadow-2xl flex flex-col group hover:-translate-y-2 transition-transform duration-300">
+            <div key={i} className="bg-white border-t-8 border-[#001f3f] shadow-lg flex flex-col group hover:-translate-y-2 transition-transform duration-300">
               <div className="p-6 md:p-8 text-center border-b border-gray-50">
-                <div className={`w-16 h-16 md:w-20 md:h-20 ${tier.color} rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl text-white`}>
+                <div className={`w-16 h-16 md:w-20 md:h-20 ${tier.color} rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg text-white`}>
                    <Star size={32} className="fill-current md:w-10 md:h-10" />
                 </div>
-                <h4 className="text-xl md:text-2xl font-black text-[#001f3f] uppercase mb-1">{tier.name}</h4>
-                <div className="text-[9px] md:text-[10px] font-black uppercase tracking-widest text-[#facc15]">{tier.hours}</div>
+                <h3 className="text-xl md:text-2xl font-semibold text-[#001f3f] mb-1">{tier.name}</h3>
+                <div className="text-[9px] md:text-[10px] font-semibold uppercase tracking-widest text-[#facc15]">{tier.hours}</div>
               </div>
               <div className="p-6 md:p-8 flex-1">
                 <ul className="space-y-4">
                   {tier.perks.map((perk, j) => (
-                    <li key={j} className="flex items-start gap-3 text-[10px] md:text-xs font-bold text-gray-500 uppercase tracking-tighter">
+                    <li key={j} className="flex items-start gap-3 text-[10px] md:text-xs font-semibold text-gray-500 tracking-tighter uppercase">
                       <ShieldCheck size={14} className="text-[#facc15] shrink-0" />
                       {perk}
                     </li>
@@ -112,9 +119,10 @@ export default function RewardsPage() {
       <SectionWrapper className="bg-[#001f3f] text-white">
         <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
           <div className="text-center lg:text-left">
-            <h2 className="text-xs md:text-sm font-bold text-[#facc15] uppercase tracking-widest mb-2">Redeem Points</h2>
-            <h3 className="text-3xl md:text-4xl font-black uppercase mb-8 leading-tight">VMC Rewards Catalog</h3>
-            <p className="text-base md:text-lg text-white/70 mb-10 leading-relaxed font-medium">
+            <p className="text-xs md:text-sm font-semibold text-[#facc15] tracking-widest mb-2 uppercase">Redeem Points</p>
+            <h2 className="text-2xl md:text-3xl font-semibold mb-4 leading-tight">VMC Rewards Catalog</h2>
+            <div className="h-1 w-20 bg-[#facc15] mb-8 mx-auto lg:mx-0"></div>
+            <p className="text-base md:text-base text-white/70 mb-10 leading-relaxed font-medium">
               Access an exclusive range of VMC merchandise and professional development resources. Your service impact creates value both for the world and your career.
             </p>
             <div className="grid grid-cols-1 gap-4 md:gap-6">
@@ -122,25 +130,25 @@ export default function RewardsPage() {
                 <div key={i} className="flex items-center gap-4 md:gap-6 bg-white/5 p-4 md:p-6 border border-white/10 hover:bg-white/10 transition-colors text-left">
                   <div className="text-[#facc15] shrink-0">{cat.icon}</div>
                   <div>
-                    <h5 className="font-black uppercase tracking-widest text-xs md:text-sm mb-1">{cat.title}</h5>
-                    <p className="text-[8px] md:text-[10px] text-white/50 uppercase font-bold">{cat.items.join(' | ')}</p>
+                    <h5 className="font-semibold uppercase tracking-widest text-xs md:text-sm mb-1">{cat.title}</h5>
+                    <p className="text-[8px] md:text-[10px] text-white/50 font-semibold uppercase">{cat.items.join(' | ')}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-          <div className="relative aspect-square shadow-2xl overflow-hidden border-4 md:border-8 border-white/5">
+          <div className="relative aspect-square shadow-lg overflow-hidden border-4 md:border-8 border-white/5">
              <Image 
               src="https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=2070&auto=format&fit=crop" 
               alt="Rewards Catalog" 
               fill 
               className="object-cover"
-             />
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
              <div className="absolute inset-0 bg-[#001f3f]/40 flex items-center justify-center p-6 md:p-12 text-center">
                 <div className="border-2 md:border-4 border-[#facc15] p-6 md:p-10 bg-[#001f3f]/80 backdrop-blur-md">
                    <Star size={36} className="text-[#facc15] mx-auto mb-4 md:w-12 md:h-12" />
-                   <h4 className="text-xl md:text-2xl font-black uppercase mb-4 tracking-widest">Coming Soon</h4>
-                   <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-white/60">Digital Rewards Marketplace</p>
+                   <h3 className="text-xl md:text-2xl font-semibold mb-4 tracking-widest uppercase">Coming Soon</h3>
+                   <p className="text-[10px] md:text-sm font-semibold uppercase tracking-widest text-white/60">Digital Rewards Marketplace</p>
                 </div>
              </div>
           </div>
@@ -150,15 +158,17 @@ export default function RewardsPage() {
       {/* Final CTA */}
       <section className="bg-white py-16 md:py-24 text-center">
         <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
-          <div className="bg-[#facc15] p-8 md:p-16 shadow-2xl border-b-8 border-[#001f3f] relative overflow-hidden">
+          <div className="bg-[#facc15] p-8 md:p-16 shadow-lg border-b-8 border-[#001f3f] relative overflow-hidden">
              <div className="relative z-10 text-center">
-                <h2 className="text-2xl md:text-5xl font-black text-[#001f3f] mb-6 uppercase leading-tight">Ready to start earning?</h2>
-                <p className="text-sm md:text-lg text-[#001f3f]/70 mb-10 font-bold uppercase tracking-widest">Join our next campaign and log your first volunteer hours today.</p>
+                <p className="text-xs md:text-sm font-semibold text-[#001f3f] tracking-widest mb-2 uppercase">Get Started</p>
+                <h2 className="text-2xl md:text-3xl font-semibold text-[#001f3f] mb-4 leading-tight">Ready To Start Earning?</h2>
+                <div className="h-1 w-20 bg-[#001f3f] mx-auto mb-8"></div>
+                <p className="text-sm md:text-base text-[#001f3f]/70 mb-10 font-semibold uppercase tracking-widest">Join our next campaign and log your first volunteer hours today.</p>
                 <div className="flex flex-wrap justify-center gap-4">
-                  <Button asChild className="bg-[#001f3f] hover:bg-[#002855] text-white rounded-none px-8 md:px-10 py-6 md:py-7 font-black uppercase tracking-widest text-xs md:text-sm w-full md:w-auto">
+                  <Button asChild className="bg-[#001f3f] hover:bg-[#002855] text-white rounded-none px-8 md:px-10 py-6 md:py-7 font-semibold  tracking-widest uppercase text-xs md:text-sm w-full md:w-auto">
                     <Link href="/campaigns">Browse Campaigns</Link>
                   </Button>
-                  <Button asChild variant="outline" className="border-2 border-[#001f3f] text-[#001f3f] hover:bg-[#001f3f] hover:text-white rounded-none px-8 md:px-10 py-6 md:py-7 font-black uppercase tracking-widest text-xs md:text-sm transition-all w-full md:w-auto">
+                  <Button asChild variant="outline" className="border-2 border-[#001f3f] text-[#001f3f] hover:bg-[#001f3f] hover:text-white rounded-none px-8 md:px-10 py-6 md:py-7 font-semibold  tracking-widest uppercase text-xs md:text-sm transition-colors transition-transform transition-shadow w-full md:w-auto">
                     <Link href="/register">Join VMC Today</Link>
                   </Button>
                 </div>

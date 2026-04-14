@@ -51,10 +51,10 @@ export function EventsSection() {
     <section id="events" className="py-20 bg-white dark:bg-slate-900">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-base md:text-base font-semibold text-gray-900 dark:text-white mb-4">
             Upcoming Events
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             Join us at upcoming events to connect, learn, and make a difference together.
           </p>
         </div>
@@ -74,7 +74,7 @@ export function EventsSection() {
                     </span>
                   </div>
 
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">
+                  <h3 className="text-base md:text-base font-semibold text-gray-900 dark:text-white">
                     {event.title}
                   </h3>
 
@@ -109,7 +109,7 @@ export function EventsSection() {
                   <div className="bg-white dark:bg-slate-800 rounded-lg p-6 border border-gray-200 dark:border-gray-600">
                     <div className="text-center">
                       <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">Ready to join?</p>
-                      <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white py-3 text-lg">
+                      <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white py-3 text-base uppercase">
                         Register Now
                       </Button>
                       <p className="text-xs text-gray-500 dark:text-gray-400 mt-3">
@@ -126,7 +126,7 @@ export function EventsSection() {
         <div className="text-center mt-12">
           <Button
             variant="outline"
-            className="border-amber-600 text-amber-600 hover:bg-amber-50 dark:border-amber-400 dark:text-amber-400 dark:hover:bg-amber-900/20 px-8 py-6 h-auto text-lg inline-flex items-center gap-2"
+            className="border-amber-600 text-amber-600 hover:bg-amber-50 dark:border-amber-400 dark:text-amber-400 dark:hover:bg-amber-900/20 px-8 py-6 h-auto text-base inline-flex items-center gap-2 uppercase"
           >
             See All Events
             <ArrowRight className="w-5 h-5" />

@@ -38,10 +38,10 @@ export function BlogGrid() {
     <section className="py-20 bg-gray-50 dark:bg-slate-950">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-base md:text-base font-semibold text-gray-900 dark:text-white mb-4">
             Latest Updates
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             Discover stories of impact and progress from our ongoing initiatives around the world.
           </p>
         </div>
@@ -50,7 +50,7 @@ export function BlogGrid() {
           {blogPosts.map((post) => (
             <article
               key={post.id}
-              className="bg-white dark:bg-slate-900 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow"
+              className="bg-white dark:bg-slate-900 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
             >
               {/* Image */}
               <div className={`${post.image} h-48 flex items-center justify-center text-white text-sm font-medium`}>
@@ -65,7 +65,7 @@ export function BlogGrid() {
                   </span>
                 </div>
 
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 flex-grow">
+                <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-3 flex-grow">
                   {post.title}
                 </h3>
 
@@ -86,7 +86,7 @@ export function BlogGrid() {
                     </div>
                     <Button
                       variant="ghost"
-                      className="text-amber-600 hover:text-amber-700 dark:text-amber-400 dark:hover:text-amber-300 p-0 h-auto"
+                      className="text-amber-600 hover:text-amber-700 dark:text-amber-400 dark:hover:text-amber-300 p-0 h-auto uppercase"
                     >
                       <ArrowRight className="w-5 h-5" />
                     </Button>
@@ -99,7 +99,7 @@ export function BlogGrid() {
 
         <div className="text-center mt-12">
           <Button
-            className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-6 h-auto text-lg"
+            className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-6 h-auto text-base uppercase"
           >
             View All Articles
           </Button>

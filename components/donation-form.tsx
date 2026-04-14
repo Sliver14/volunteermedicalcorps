@@ -59,20 +59,20 @@ export function DonationForm() {
 
   if (submitted) {
     return (
-      <div className="bg-white p-8 md:p-16 shadow-2xl border-t-8 border-[#facc15] text-center max-w-2xl mx-auto my-12">
+      <div className="bg-white p-8 md:p-16 shadow-lg border-t-8 border-[#facc15] text-center max-w-2xl mx-auto my-12">
         <div className="flex justify-center mb-8">
           <div className="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center animate-bounce">
             <Check className="w-10 h-10 text-green-600" />
           </div>
         </div>
-        <h2 className="text-3xl font-black text-[#001f3f] uppercase mb-4">Generosity Received!</h2>
-        <p className="text-xl text-gray-600 mb-6 font-medium">
-          Your generous donation of <span className="text-[#001f3f] font-black">${finalAmount.toLocaleString()}</span> has been processed successfully.
+        <h2 className="text-base font-semibold text-[#001f3f]  mb-4">Generosity Received!</h2>
+        <p className="text-base text-gray-600 mb-6 font-medium">
+          Your generous donation of <span className="text-[#001f3f] font-semibold">${finalAmount.toLocaleString()}</span> has been processed successfully.
         </p>
-        <p className="text-gray-400 text-sm uppercase tracking-widest font-bold">
+        <p className="text-gray-400 text-sm  tracking-widest font-semibold">
           A receipt has been sent to {formData.email}
         </p>
-        <Button className="mt-10 bg-[#001f3f] text-white rounded-none px-10 py-6 uppercase font-black tracking-widest" onClick={() => setSubmitted(false)}>
+        <Button className="mt-10 bg-[#001f3f] text-white rounded-none px-10 py-6  font-semibold tracking-widest uppercase" onClick={() => setSubmitted(false)}>
           Back to Donation
         </Button>
       </div>
@@ -80,16 +80,16 @@ export function DonationForm() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto bg-white shadow-2xl overflow-hidden border-b-8 border-[#facc15] mb-24">
+    <div className="max-w-4xl mx-auto bg-white shadow-lg overflow-hidden border-b-8 border-[#facc15] mb-24">
       {/* Header */}
       <div className="bg-[#001f3f] text-white p-8 md:p-12 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-[#facc15]/10 skew-x-12 translate-x-1/2"></div>
         <div className="relative z-10">
           <div className="flex items-center gap-3 mb-4">
             <Heart className="w-8 h-8 text-[#facc15] fill-current" />
-            <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter">Your Gift Saves Lives</h2>
+            <h2 className="text-base md:text-base font-semibold  tracking-tighter">Your Gift Saves Lives</h2>
           </div>
-          <p className="text-lg text-white/70 max-w-2xl font-medium">Your contribution directly supports our medical missions and relief efforts globally. Join us in bringing healing to the nations.</p>
+          <p className="text-base text-white/70 max-w-2xl font-medium">Your contribution directly supports our medical missions and relief efforts globally. Join us in bringing healing to the nations.</p>
         </div>
       </div>
 
@@ -99,16 +99,16 @@ export function DonationForm() {
           
           {/* Amount Selection */}
           <div className="space-y-6">
-            <h3 className="text-lg font-black text-[#001f3f] uppercase border-b border-gray-100 pb-2">Select Donation Amount</h3>
+            <h3 className="text-base font-semibold text-[#001f3f]  border-b border-gray-100 pb-2">Select Donation Amount</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
               {donationAmounts.map((amount) => (
                 <button
                   key={amount}
                   type="button"
                   onClick={() => handleAmountClick(amount)}
-                  className={`py-4 px-2 rounded-none font-black transition-all text-sm uppercase tracking-widest border-2 ${
+                  className={`py-4 px-2 rounded-none font-semibold transition-colors transition-transform transition-shadow text-sm  tracking-widest border-2 ${
                     selectedAmount === amount && !isCustom
-                      ? 'bg-[#001f3f] text-white border-[#001f3f] shadow-xl'
+                      ? 'bg-[#001f3f] text-white border-[#001f3f] shadow-lg'
                       : 'bg-white border-gray-100 text-[#001f3f] hover:border-[#facc15] hover:bg-gray-50'
                   }`}
                 >
@@ -118,9 +118,9 @@ export function DonationForm() {
             </div>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 pt-4">
-              <span className="text-gray-400 font-bold uppercase tracking-widest text-xs">Or enter custom amount:</span>
+              <span className="text-gray-400 font-semibold  tracking-widest text-xs">Or enter custom amount:</span>
               <div className="relative flex-1 w-full max-w-xs">
-                <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-[#001f3f] font-black">
+                <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-[#001f3f] font-semibold">
                   $
                 </span>
                 <Input
@@ -129,7 +129,7 @@ export function DonationForm() {
                   value={customAmount}
                   onChange={handleCustomAmount}
                   min="1"
-                  className="pl-10 py-6 rounded-none border-2 border-gray-100 focus-visible:ring-[#facc15] font-black text-[#001f3f]"
+                  className="pl-10 py-6 rounded-none border-2 border-gray-100 focus-visible:ring-[#facc15] font-semibold text-[#001f3f]"
                 />
               </div>
             </div>
@@ -137,7 +137,7 @@ export function DonationForm() {
 
           {/* Payment Method */}
           <div className="space-y-6">
-            <h3 className="text-lg font-black text-[#001f3f] uppercase border-b border-gray-100 pb-2">Payment Method</h3>
+            <h3 className="text-base font-semibold text-[#001f3f]  border-b border-gray-100 pb-2">Payment Method</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 { id: 'card', label: 'Credit / Debit Card', icon: <CreditCard className="w-6 h-6" /> },
@@ -145,7 +145,7 @@ export function DonationForm() {
               ].map((method) => (
                 <label
                   key={method.id}
-                  className={`flex items-center gap-4 p-6 rounded-none border-2 cursor-pointer transition-all ${
+                  className={`flex items-center gap-4 p-6 rounded-none border-2 cursor-pointer transition-colors transition-transform transition-shadow ${
                     paymentMethod === method.id
                       ? 'border-[#001f3f] bg-gray-50'
                       : 'border-gray-100 hover:border-[#facc15]'
@@ -160,7 +160,7 @@ export function DonationForm() {
                     className="w-4 h-4 accent-[#001f3f]"
                   />
                   <div className="text-[#001f3f]">{method.icon}</div>
-                  <span className="font-black text-[#001f3f] uppercase tracking-widest text-xs">
+                  <span className="font-semibold text-[#001f3f]  tracking-widest text-xs">
                     {method.label}
                   </span>
                 </label>
@@ -170,10 +170,10 @@ export function DonationForm() {
 
           {/* Donor Info */}
           <div className="space-y-6">
-            <h3 className="text-lg font-black text-[#001f3f] uppercase border-b border-gray-100 pb-2">Donor Information</h3>
+            <h3 className="text-base font-semibold text-[#001f3f]  border-b border-gray-100 pb-2">Donor Information</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">First Name</label>
+                <label className="text-[10px] font-semibold text-gray-400  tracking-widest">First Name</label>
                 <Input
                   type="text"
                   name="firstName"
@@ -184,7 +184,7 @@ export function DonationForm() {
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Last Name</label>
+                <label className="text-[10px] font-semibold text-gray-400  tracking-widest">Last Name</label>
                 <Input
                   type="text"
                   name="lastName"
@@ -196,7 +196,7 @@ export function DonationForm() {
               </div>
             </div>
             <div className="space-y-2">
-              <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Email Address</label>
+              <label className="text-[10px] font-semibold text-gray-400  tracking-widest">Email Address</label>
               <Input
                 type="email"
                 name="email"
@@ -220,12 +220,12 @@ export function DonationForm() {
                 className="w-5 h-5 mt-1 accent-[#001f3f] cursor-pointer"
               />
               <span className="text-xs text-gray-500 font-medium leading-relaxed group-hover:text-gray-700 transition-colors">
-                I agree to the <Link href="/terms" className="text-[#001f3f] font-black underline">Terms of Use</Link> and <Link href="/privacy" className="text-[#001f3f] font-black underline">Privacy Policy</Link>. I authorize the Volunteer Medical Corps to process this donation.
+                I agree to the <Link href="/terms" className="text-[#001f3f] font-semibold underline">Terms of Use</Link> and <Link href="/privacy" className="text-[#001f3f] font-semibold underline">Privacy Policy</Link>. I authorize the Volunteer Medical Corps to process this donation.
               </span>
             </label>
             <div className="flex items-center gap-2 text-green-600">
               <ShieldCheck size={16} />
-              <span className="text-[10px] font-black uppercase tracking-[0.2em]">Secure 256-bit SSL Encrypted Payment</span>
+              <span className="text-[10px] font-semibold  tracking-[0.2em]">Secure 256-bit SSL Encrypted Payment</span>
             </div>
           </div>
 
@@ -233,7 +233,7 @@ export function DonationForm() {
           <Button
             type="submit"
             disabled={!formData.firstName || !formData.lastName || !formData.email || !formData.terms || (finalAmount < 1)}
-            className="w-full bg-[#001f3f] hover:bg-[#002855] text-white py-10 text-xl font-black rounded-none uppercase tracking-[0.2em] shadow-2xl transition-all active:scale-[0.98]"
+            className="w-full bg-[#001f3f] hover:bg-[#002855] text-white py-10 text-base font-semibold rounded-none  tracking-[0.2em] shadow-lg transition-colors transition-transform transition-shadow active:scale-[0.98] uppercase"
           >
             Complete Donation of ${finalAmount > 0 ? finalAmount.toLocaleString() : '0'}
           </Button>

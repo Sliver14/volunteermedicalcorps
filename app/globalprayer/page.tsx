@@ -32,12 +32,12 @@ export default function GlobalPrayerPage() {
             alt="Prayer Background" 
             fill 
             className="object-cover"
-          />
+           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
         </div>
         <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10 text-center">
-          <h1 className="text-4xl md:text-6xl font-black mb-6 uppercase tracking-tight">VMC Praying Medics</h1>
-          <div className="h-2 w-24 bg-[#facc15] mx-auto mb-8"></div>
-          <p className="text-xl text-[#facc15] font-bold uppercase tracking-widest max-w-3xl mx-auto">
+          <h1 className="text-3xl md:text-5xl font-semibold mb-6">VMC Praying Medics</h1>
+          <div className="h-1 w-20 bg-[#facc15] mx-auto mb-8"></div>
+          <p className="text-xs md:text-sm text-[#facc15] font-semibold uppercase tracking-widest max-w-3xl mx-auto">
             A Global Network of Faith, Compassion, and Divine Healing.
           </p>
         </div>
@@ -47,13 +47,13 @@ export default function GlobalPrayerPage() {
         <div className="grid lg:grid-cols-3 gap-12">
           {/* Info Sidebar */}
           <div className="lg:col-span-1 space-y-8">
-            <div className="bg-[#001f3f] text-white p-8 shadow-2xl border-b-8 border-[#facc15]">
-              <h3 className="text-2xl font-black mb-6 uppercase">Current Prayer Focus</h3>
+            <div className="bg-[#001f3f] text-white p-8 shadow-lg border-b-8 border-[#facc15]">
+              <h3 className="text-xl md:text-2xl font-semibold mb-6">Current Prayer Focus</h3>
               <div className="space-y-6">
                 {prayerFocus.map((f, i) => (
                   <div key={i} className="flex gap-4 border-b border-white/10 pb-4 last:border-0">
                     <div>
-                      <h4 className="font-bold text-[#facc15] uppercase text-sm mb-1">{f.title}</h4>
+                      <h4 className="text-lg md:text-xl font-semibold text-[#facc15] mb-1">{f.title}</h4>
                       <p className="text-white/70 text-xs leading-relaxed">{f.desc}</p>
                     </div>
                   </div>
@@ -61,37 +61,38 @@ export default function GlobalPrayerPage() {
               </div>
             </div>
             
-            <div className="bg-white p-8 shadow-xl border border-gray-100">
-              <h4 className="font-black text-[#001f3f] uppercase mb-4">Join the Network</h4>
+            <div className="bg-white p-8 shadow-lg border border-gray-100">
+              <h4 className="text-lg md:text-xl font-semibold text-[#001f3f] mb-4">Join The Network</h4>
               <p className="text-gray-500 text-sm mb-6">Become a part of our global intercessory team and pray for medical missions worldwide.</p>
-              <Button asChild className="w-full bg-[#facc15] hover:bg-[#001f3f] text-[#001f3f] hover:text-white rounded-none font-black uppercase tracking-widest py-6 text-xs">
-                <a href="/register">Sign Up to Pray</a>
+              <Button asChild className="w-full bg-[#facc15] hover:bg-[#001f3f] text-[#001f3f] hover:text-white rounded-none font-semibold uppercase tracking-widest py-6 text-xs">
+                <a href="/register">Sign Up To Pray</a>
               </Button>
             </div>
           </div>
 
           {/* Prayer Request Form */}
           <div className="lg:col-span-2">
-            <div className="bg-white p-8 md:p-12 shadow-2xl border-t-8 border-[#001f3f]">
+            <div className="bg-white p-8 md:p-12 shadow-lg border-t-8 border-[#001f3f]">
               <div className="mb-10">
-                <h2 className="text-3xl font-black text-[#001f3f] uppercase mb-2">Submit a Prayer Request</h2>
-                <p className="text-gray-400 font-bold uppercase tracking-widest text-xs">Our global prayer network is standing with you</p>
+                <p className="text-xs md:text-sm font-semibold text-[#facc15] tracking-widest mb-2 uppercase">Our global prayer network is standing with you</p>
+                <h2 className="text-2xl md:text-3xl font-semibold text-[#001f3f] mb-4">Submit A Prayer Request</h2>
+                <div className="h-1 w-20 bg-[#facc15] mb-8"></div>
               </div>
               
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-xs font-bold text-gray-400 uppercase tracking-widest">Full Name</label>
+                    <label className="text-xs font-semibold text-gray-400 uppercase tracking-widest">Full Name</label>
                     <Input {...register('name')} required className="rounded-none border-gray-200 focus-visible:ring-[#facc15] py-6" />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-xs font-bold text-gray-400 uppercase tracking-widest">Email Address</label>
+                    <label className="text-xs font-semibold text-gray-400 uppercase tracking-widest">Email Address</label>
                     <Input type="email" {...register('email')} required className="rounded-none border-gray-200 focus-visible:ring-[#facc15] py-6" />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-xs font-bold text-gray-400 uppercase tracking-widest">Prayer Request Details</label>
+                  <label className="text-xs font-semibold text-gray-400 uppercase tracking-widest">Prayer Request Details</label>
                   <Textarea 
                     {...register('request')} 
                     required
@@ -105,7 +106,7 @@ export default function GlobalPrayerPage() {
                   <p className="text-sm text-gray-600 font-medium italic">"For where two or three are gathered together in my name, there am I in the midst of them." - Matthew 18:20</p>
                 </div>
 
-                <Button type="submit" className="w-full bg-[#001f3f] hover:bg-[#002855] text-white rounded-none py-8 font-black uppercase tracking-widest text-lg shadow-xl active:scale-95 transition-all">
+                <Button type="submit" className="w-full bg-[#001f3f] hover:bg-[#002855] text-white rounded-none py-8 font-semibold uppercase tracking-widest text-base shadow-lg active:scale-95 transition-colors transition-transform transition-shadow">
                   Send Prayer Request
                 </Button>
               </form>

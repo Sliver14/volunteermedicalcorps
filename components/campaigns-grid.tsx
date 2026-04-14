@@ -65,7 +65,7 @@ function ProgressBar({ raised, goal }: { raised: number; goal: number }) {
   return (
     <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
       <div
-        className="bg-gradient-to-r from-amber-500 to-amber-600 h-full transition-all duration-500"
+        className="bg-gradient-to-r from-amber-500 to-amber-600 h-full transition-colors transition-transform transition-shadow duration-500"
         style={{ width: `${percentage}%` }}
       />
     </div>
@@ -77,10 +77,10 @@ export function CampaignsGrid() {
     <section id="campaigns" className="py-20 bg-gray-50 dark:bg-slate-950">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-base md:text-base font-semibold text-gray-900 dark:text-white mb-4">
             Active Campaigns
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             Support our ongoing initiatives to create lasting change in communities worldwide.
           </p>
         </div>
@@ -91,7 +91,7 @@ export function CampaignsGrid() {
             return (
               <div
                 key={campaign.id}
-                className="bg-white dark:bg-slate-900 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow"
+                className="bg-white dark:bg-slate-900 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
               >
                 {/* Image */}
                 <div className={`${campaign.image} h-40 flex items-center justify-center text-white text-sm font-medium`}>
@@ -101,7 +101,7 @@ export function CampaignsGrid() {
                 {/* Content */}
                 <div className="p-6 flex flex-col h-full">
                   <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white flex-grow pr-2">
+                    <h3 className="text-base font-semibold text-gray-900 dark:text-white flex-grow pr-2">
                       {campaign.title}
                     </h3>
                     <span className="inline-flex items-center gap-1 px-2 py-1 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 text-xs font-semibold rounded whitespace-nowrap">
@@ -127,7 +127,7 @@ export function CampaignsGrid() {
                           {percentage.toFixed(0)}% funded
                         </div>
                       </div>
-                      <Button className="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 h-auto text-sm">
+                      <Button className="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 h-auto text-sm uppercase">
                         Donate
                       </Button>
                     </div>
@@ -140,7 +140,7 @@ export function CampaignsGrid() {
 
         <div className="text-center mt-12">
           <Button
-            className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-6 h-auto text-lg"
+            className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-6 h-auto text-base uppercase"
           >
             View All Campaigns
           </Button>
